@@ -38,26 +38,35 @@
       </div>
     </div>
 
+
+
 <!-- Zone creation commentaires -->
-<h5 class="card-title">Commentaires </h5>
+<div class="container-fluid">
+  <div class="my-3 mx-3">
+    <%= form_tag("/gossips/#{@gossip.id}/comments", method: 'post') do %>
+      <p class="comment-form "><%= text_area_tag :content, nil, placeholder: "Votre commentaire ...", rows: 2, cols: 50 %>
+        <%= submit_tag "Commenter", class: "button btn btn-outline-info btn-dark btn-sm" %>
+      </p>
+    <% end %>
+  </div>
+</div>
 
+<!-- compteur de commentaires -->
 
-
-
-<%= form_tag("/gossips/#{@gossip.id}/comments", method: 'post') do %>
-  <p class="comment-form"><%= text_area_tag :content, nil, placeholder: "Votre commentaire ...", rows: 2, cols: 100 %>
-    <%= submit_tag "Commenter", class: "button btn btn-outline-info btn-dark btn-sm" %>
-  </p>
-<% end %>
-
+<button type="button" class="btn btn-primary position-relative mx-4">
+  Commentaires
+  <span id="comment-count-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+   <%= @comment_count %>
+    <span class="visually-hidden">unread messages</span>
+  </span>
+</button>
 
 <!-- Zone affichage commentaires -->
-<p class="small text-italic">Pour info, ce sont des contrepétries ;-)</p>
-<ul class="list-group list-group-flush">
+  <p class="small text-italic mx-4">Pour info, ce sont des contrepétries ;-)</p><ul class="list-group">
   <% @gossip.comments.each do |comment| %>
-    <li class="list-group-item">
+    <li class="list-group-item mx-4">
      <%= comment.content %><br>
-     Ecrit par <%= comment.user.first_name %>, le <%= comment.updated_at.strftime("%d/%m/%Y") %>
+     <p class="small text-muted text-italic"> Ecrit par <%= comment.user.first_name %>, le <%= comment.updated_at.strftime("%d/%m/%Y") %></p>
       <div class="mb-2 mt-2"> <!-- Ajout de marges en haut et en bas du bouton -->
       <% if current_user == comment.user %>   
         <%= button_to "Supprimer", [@gossip, comment], class: 'btn btn-secondary', form: {data: {turbo_confirm: 'Valider ?'}}, method: :delete %>

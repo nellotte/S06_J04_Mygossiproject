@@ -13,13 +13,24 @@
  *= require_tree .
  *= require_self
  */
- .team-page {
-  background-color: #f0f0f0;
-  padding: 20px;
+
+ .btn-custom-logout {
+  background-color: transparent; /* Fond transparent */
+  border: 1px solid #FF0000; /* Bordure solide rouge */
+  color: #FF0000; /* Texte rouge */
+  padding: 0.25rem 0.5rem; /* Espacement intérieur personnalisé (ajustez selon vos besoins) */
+  font-weight: bold; /* Texte en gras */
+  text-decoration: none; /* Supprime la décoration du lien par défaut */
+  cursor: pointer; /* Curseur en main pour indiquer que c'est un élément cliquable */
+  border-radius: 0.20rem; /* Coins arrondis (ajustez selon vos préférences) */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animation de transition */
+  margin-right: 10px; /* Marge à droite (ajustez selon vos préférences) */
 }
 
-/* Styles pour la page "contact" */
-.contact-page {
-  text-align: center; /* Pour centrer le texte */
-  color: red; /* Pour rendre le texte en rouge */
+.btn-custom-logout:hover {
+  background-color: #FF0000; /* Fond rouge au survol */
+  color: #FFFFFF; /* Texte blanc au survol */
 }
+
+
+

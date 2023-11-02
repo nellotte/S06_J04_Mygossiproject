@@ -2,6 +2,8 @@ class GossipsController < ApplicationController
  # Méthode qui récupère le potin concerné et l'envoie à la view show (show.html.erb) pour affichage
   def show
     @gossip = Gossip.find(params[:id])
+    @comments = @gossip.comments
+    @comment_count = @comments.count
   end
 
   # Méthode qui récupère tous les potins et les envoie à la view index (index.html.erb) pour affichage

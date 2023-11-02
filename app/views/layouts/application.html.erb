@@ -10,6 +10,7 @@
   <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- surcouche CSS -->
 
 
@@ -19,43 +20,48 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="application.css">
-
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
 
-  <body data-turbo="false">
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/home">The Gossip Project</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <% if current_user %>
-            <%= link_to 'Liste des gossips', gossips_path, class: 'nav-link' %>
-            <%= link_to 'Liste des gossipeurs', users_path, class: 'nav-link' %>
-            <%= link_to 'Team', team_path, class: 'nav-link' %>
-            <%= link_to 'Contact', contact_path, class: 'nav-link' %>
-            <%= button_to "Se déconnecter", session_path(session.id), method: :delete %>
-
-
-          <% else %>
-            <!-- Liens de navigation pour les utilisateurs non connectés -->
-            <%= link_to 'Inscription', new_user_path, class: 'nav-link'%>
-            <%= link_to 'Connexion', new_session_path, class: 'nav-link'%>
-         <% end %>
-        </div>
+  <body data-turbo="false">    
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+          <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+        <% end %>
       </div>
-  
-    
 
-  </div>
-</nav>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <% if current_user %>
+          <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
 
-    <%= yield %>
+          <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+
+          <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+
+          <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+
+          <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+
+          <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+          
+
+        <% else %>
+        <!-- Liens de navigation pour les utilisateurs non connectés -->
+        <div class="col-md-3 text-end">
+           <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+
+           <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+
+        </div>
+        <% end %>
+    </div>
+
+      <%= yield %>
 
  
 
