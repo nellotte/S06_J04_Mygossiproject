@@ -5,6 +5,10 @@
         <!-- Utilisation des classes Bootstrap pour le dimensionnement automatique -->
         <h1 class="modal-title text-dark fs-3 fs-md-6 mt-4">Bonjour <%= current_user ? current_user.first_name : 'cher visiteur !' %> </h1>
         <h3 class="modal-title text-dark fs-4 fs-md-6 mx-1 mx-md-5 mt-4 mb-4">Tous les potins de la promo THP Autome 2023</h3>
+           <!-- Condition pour afficher le bouton si un utilisateur est connecté -->
+        <% if current_user %>
+          <a href="<%= new_gossip_path %>" class="btn btn-primary btn-lg">Balance un gossip</a>
+        <% end %>
       </div>
     </div>
   </div>

@@ -38756,3 +38756,2971 @@ Started GET "/application.css" for 127.0.0.1 at 2023-11-02 21:18:30 +0100
   
 ActionController::RoutingError (No route matches [GET] "/application.css"):
   
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-02 21:23:20 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 37.6ms | Allocations: 452)
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 88.1ms | Allocations: 2138)
+Completed 200 OK in 151ms (Views: 91.2ms | ActiveRecord: 3.2ms | Allocations: 2362)
+
+
+Started GET "/sessions/application.css" for 127.0.0.1 at 2023-11-02 21:23:20 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/application.css"):
+  
+Started POST "/sessions" for 127.0.0.1 at 2023-11-02 21:23:34 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"nelly.guerin@email.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nelly.guerin@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:12:in `create'
+Redirected to http://127.0.0.1:3000/home
+Completed 302 Found in 287ms (ActiveRecord: 11.0ms | Allocations: 894)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:23:34 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (0.7ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 19.0ms | Allocations: 4343)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 5838)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 1.2ms | Allocations: 6076)
+
+
+Started GET "/application.css" for 127.0.0.1 at 2023-11-02 21:23:35 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/gossips/83" for 127.0.0.1 at 2023-11-02 21:23:45 +0100
+Processing by GossipsController#show as HTML
+  Parameters: {"id"=>"83"}
+  [1m[36mGossip Load (42.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+  [1m[36mComment Count (32.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 83]]
+  ↳ app/controllers/gossips_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gossips/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:25
+  [1m[36mCity Load (3.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:36
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 83]]
+  ↳ app/views/gossips/show.html.erb:66
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered gossips/show.html.erb within layouts/application (Duration: 135.3ms | Allocations: 15927)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 140.5ms | Allocations: 17532)
+Completed 200 OK in 335ms (Views: 95.7ms | ActiveRecord: 186.5ms | Allocations: 21348)
+
+
+Started GET "/gossips/application.css" for 127.0.0.1 at 2023-11-02 21:23:46 +0100
+Processing by GossipsController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mGossip Load (0.9ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms | Allocations: 851)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gossip with 'id'=application):
+  
+app/controllers/gossips_controller.rb:4:in `show'
+Started POST "/gossips/83/comments" for 127.0.0.1 at 2023-11-02 21:24:07 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>"test commentaire", "commit"=>"Commenter", "gossip_id"=>"83"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mComment Create (316.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "test commentaire"], ["user_id", 45], ["gossip_id", 83], ["created_at", "2023-11-02 20:24:07.985087"], ["updated_at", "2023-11-02 20:24:07.985087"]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/gossips/83
+Completed 302 Found in 350ms (ActiveRecord: 320.2ms | Allocations: 4851)
+
+
+Started GET "/gossips/83" for 127.0.0.1 at 2023-11-02 21:24:08 +0100
+Processing by GossipsController#show as HTML
+  Parameters: {"id"=>"83"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 83]]
+  ↳ app/controllers/gossips_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gossips/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:25
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:36
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 83]]
+  ↳ app/views/gossips/show.html.erb:66
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered gossips/show.html.erb within layouts/application (Duration: 23.1ms | Allocations: 5988)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 7608)
+Completed 200 OK in 32ms (Views: 25.9ms | ActiveRecord: 3.6ms | Allocations: 8794)
+
+
+Started GET "/gossips/application.css" for 127.0.0.1 at 2023-11-02 21:24:08 +0100
+Processing by GossipsController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+Completed 404 Not Found in 9ms (ActiveRecord: 0.4ms | Allocations: 839)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gossip with 'id'=application):
+  
+app/controllers/gossips_controller.rb:4:in `show'
+Started DELETE "/gossips/83/comments/195" for 127.0.0.1 at 2023-11-02 21:24:11 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gossip_id"=>"83", "id"=>"195"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:23:in `destroy'
+  [1m[36mGossip Load (0.6ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:26:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:27:in `destroy'
+  [1m[36mComment Destroy (50.2ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 195]]
+  ↳ app/controllers/comments_controller.rb:27:in `destroy'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:27:in `destroy'
+Redirected to http://127.0.0.1:3000/gossips/83
+Completed 302 Found in 69ms (ActiveRecord: 54.3ms | Allocations: 3085)
+
+
+Started GET "/gossips/83" for 127.0.0.1 at 2023-11-02 21:24:11 +0100
+Processing by GossipsController#show as HTML
+  Parameters: {"id"=>"83"}
+  [1m[36mGossip Load (0.8ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 83]]
+  ↳ app/controllers/gossips_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gossips/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:25
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:36
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 83]]
+  ↳ app/views/gossips/show.html.erb:66
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered gossips/show.html.erb within layouts/application (Duration: 31.7ms | Allocations: 5030)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 6650)
+Completed 200 OK in 39ms (Views: 24.9ms | ActiveRecord: 11.8ms | Allocations: 7835)
+
+
+Started GET "/gossips/application.css" for 127.0.0.1 at 2023-11-02 21:24:11 +0100
+Processing by GossipsController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 839)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gossip with 'id'=application):
+  
+app/controllers/gossips_controller.rb:4:in `show'
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:25:42 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (1.0ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 53.0ms | Allocations: 4299)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 82.0ms | Allocations: 5794)
+Completed 200 OK in 88ms (Views: 84.2ms | ActiveRecord: 1.4ms | Allocations: 6030)
+
+
+Started GET "/application.css" for 127.0.0.1 at 2023-11-02 21:25:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:35:22 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (44.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (19.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 441.6ms | Allocations: 16886)
+  Rendered layout layouts/application.html.erb (Duration: 451.7ms | Allocations: 18469)
+Completed 500 Internal Server Error in 519ms (ActiveRecord: 174.1ms | Allocations: 21258)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+
+<html>
+  <head>
+    <title>MyGossipProject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Les balises link et script doivent être incluses dans le head -->
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- surcouche CSS -->
+
+
+    <!-- Fontawsome -->
+    <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="application.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+
+  <body data-turbo="false">   
+   <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+    <% if current_user %>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          <% end %>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <% if current_user %>
+            <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+
+            <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+
+            <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+
+            <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+
+            <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+
+            <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+            
+
+        <% else %>
+        <!-- affichage jumbotron pour les utilisateurs non connectés -->
+          <div class="container my-5">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+              
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="bootstrap" viewBox="0 0 118 94">
+    <title>Bootstrap</title>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+  </symbol>
+  <symbol id="arrow-right-short" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+  </symbol>
+  <symbol id="check2-circle" viewBox="0 0 16 16">
+    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"></path>
+    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"></path>
+  </symbol>
+</svg>
+
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+    <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+      This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+    </p>
+    <div class="d-inline-flex gap-2 mb-5">
+      <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+        Call to action
+        <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+      </button>
+      <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+        Secondary link
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="container my-5">
+  <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+    <button type="button" class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill" aria-label="Close"></button>
+    <svg class="bi mt-5 mb-3" width="48" height="48"><use xlink:href="#check2-circle"></use></svg>
+    <h1 class="text-body-emphasis">Placeholder jumbotron</h1>
+    <p class="col-lg-6 mx-auto mb-4">
+      This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context to a page or section when no content is available and to encourage visitors to take a specific action.
+    </p>
+    <button class="btn btn-primary px-5 mb-5" type="button">
+      Call to action
+    </button>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="my-5">
+  <div class="p-5 text-center bg-body-tertiary">
+    <div class="container py-5">
+      <h1 class="text-body-emphasis">Full-width jumbotron</h1>
+      <p class="col-lg-8 mx-auto lead">
+        This takes the basic jumbotron above and makes its background edge-to-edge with a <code>.container</code> inside to align content. Similar to above, it's been recreated with built-in grid and utility classes.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <h1 class="text-body-emphasis">Basic jumbotron</h1>
+    <p class="lead">
+      This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in utility classes.
+    </p>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+    <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+      This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+    </p>
+    <div class="d-inline-flex gap-2 mb-5">
+      <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+        Call to action
+        <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+      </button>
+      <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+        Secondary link
+      </button>
+    </div>
+  </div>
+  
+
+
+
+        <div class="col-md-3 text-end">
+           <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+
+           <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+
+        </div>
+        <% end %>
+    </div>
+
+      <%= yield %>
+
+ 
+
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    
+3:    <html>
+4:      <head>
+5:        <title>MyGossipProject</title>
+6:        <meta name="viewport" content="width=device-width,initial-scale=1">
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <!-- Les balises link et script doivent être incluses dans le head -->
+10:      <!-- Bootstrap CSS -->
+11:        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+12:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+13:        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+14:        <!-- surcouche CSS -->
+15:    
+16:    
+17:        <!-- Fontawsome -->
+18:        <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+19:        
+20:    
+21:        <!-- CSS -->
+22:        <link rel="stylesheet" type="text/css" href="application.css">
+23:        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+24:    
+25:      </head>
+26:    
+27:    
+28:      <body data-turbo="false">   
+29:       <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+30:        <% if current_user %>
+31:          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+32:            <div class="col-md-3 mb-2 mb-md-0">
+33:              <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+34:                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+35:                  <use xlink:href="#bootstrap"></use>
+36:                </svg>
+37:              <% end %>
+38:            </div>
+39:    
+40:            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+41:              <% if current_user %>
+42:                <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+43:    
+44:                <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+45:    
+46:                <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+47:    
+48:                <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+49:    
+50:                <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+51:    
+52:                <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+53:                
+54:    
+55:            <% else %>
+56:            <!-- affichage jumbotron pour les utilisateurs non connectés -->
+57:              <div class="container my-5">
+58:                <div class="p-5 text-center bg-body-tertiary rounded-3">
+59:                  
+60:        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+61:          <symbol id="check2" viewBox="0 0 16 16">
+62:            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+63:          </symbol>
+64:          <symbol id="circle-half" viewBox="0 0 16 16">
+65:            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+66:          </symbol>
+67:          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+68:            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+69:            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+70:          </symbol>
+71:          <symbol id="sun-fill" viewBox="0 0 16 16">
+72:            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+73:          </symbol>
+74:        </svg>
+75:    
+76:        <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+77:          <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+78:            <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+79:            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+80:          </button>
+81:          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+82:            <li>
+83:              <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+84:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+85:                Light
+86:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+87:              </button>
+88:            </li>
+89:            <li>
+90:              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+91:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+92:                Dark
+93:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+94:              </button>
+95:            </li>
+96:            <li>
+97:              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+98:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+99:                Auto
+100:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+101:              </button>
+102:            </li>
+103:          </ul>
+104:        </div>
+105:    
+106:        
+107:    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+108:      <symbol id="bootstrap" viewBox="0 0 118 94">
+109:        <title>Bootstrap</title>
+110:        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+111:      </symbol>
+112:      <symbol id="arrow-right-short" viewBox="0 0 16 16">
+113:        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+114:      </symbol>
+115:      <symbol id="check2-circle" viewBox="0 0 16 16">
+116:        <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"></path>
+117:        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"></path>
+118:      </symbol>
+119:    </svg>
+120:    
+121:    <div class="container my-5">
+122:      <div class="p-5 text-center bg-body-tertiary rounded-3">
+123:        <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+124:        <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+125:        <p class="col-lg-8 mx-auto fs-5 text-muted">
+126:          This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+127:        </p>
+128:        <div class="d-inline-flex gap-2 mb-5">
+129:          <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+130:            Call to action
+131:            <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+132:          </button>
+133:          <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+134:            Secondary link
+135:          </button>
+136:        </div>
+137:      </div>
+138:    </div>
+139:    
+140:    <div class="b-example-divider"></div>
+141:    
+142:    <div class="container my-5">
+143:      <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+144:        <button type="button" class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill" aria-label="Close"></button>
+145:        <svg class="bi mt-5 mb-3" width="48" height="48"><use xlink:href="#check2-circle"></use></svg>
+146:        <h1 class="text-body-emphasis">Placeholder jumbotron</h1>
+147:        <p class="col-lg-6 mx-auto mb-4">
+148:          This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context to a page or section when no content is available and to encourage visitors to take a specific action.
+149:        </p>
+150:        <button class="btn btn-primary px-5 mb-5" type="button">
+151:          Call to action
+152:        </button>
+153:      </div>
+154:    </div>
+155:    
+156:    <div class="b-example-divider"></div>
+157:    
+158:    <div class="my-5">
+159:      <div class="p-5 text-center bg-body-tertiary">
+160:        <div class="container py-5">
+161:          <h1 class="text-body-emphasis">Full-width jumbotron</h1>
+162:          <p class="col-lg-8 mx-auto lead">
+163:            This takes the basic jumbotron above and makes its background edge-to-edge with a <code>.container</code> inside to align content. Similar to above, it's been recreated with built-in grid and utility classes.
+164:          </p>
+165:        </div>
+166:      </div>
+167:    </div>
+168:    
+169:    <div class="b-example-divider"></div>
+170:    
+171:    <div class="container my-5">
+172:      <div class="p-5 text-center bg-body-tertiary rounded-3">
+173:        <h1 class="text-body-emphasis">Basic jumbotron</h1>
+174:        <p class="lead">
+175:          This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in utility classes.
+176:        </p>
+177:      </div>
+178:    </div>
+179:    
+180:    <div class="b-example-divider"></div>
+181:    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+182:    
+183:      
+184:      <div class="p-5 text-center bg-body-tertiary rounded-3">
+185:        <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+186:        <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+187:        <p class="col-lg-8 mx-auto fs-5 text-muted">
+188:          This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+189:        </p>
+190:        <div class="d-inline-flex gap-2 mb-5">
+191:          <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+192:            Call to action
+193:            <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+194:          </button>
+195:          <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+196:            Secondary link
+197:          </button>
+198:        </div>
+199:      </div>
+200:      
+201:    
+202:    
+203:    
+204:            <div class="col-md-3 text-end">
+205:               <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+206:    
+207:               <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+208:    
+209:            </div>
+210:            <% end %>
+211:        </div>
+212:    
+213:          <%= yield %>
+214:    
+215:     
+216:    
+217:      </body>
+218:    </html>
+  
+app/views/layouts/application.html.erb:221: syntax error, unexpected end-of-input
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:35:40 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (1.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 117.5ms | Allocations: 14773)
+  Rendered layout layouts/application.html.erb (Duration: 119.9ms | Allocations: 16339)
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 66.4ms | Allocations: 19127)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+
+<html>
+  <head>
+    <title>MyGossipProject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Les balises link et script doivent être incluses dans le head -->
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- surcouche CSS -->
+
+
+    <!-- Fontawsome -->
+    <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="application.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+
+  <body data-turbo="false">   
+   <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+    <% if current_user %>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          <% end %>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <% if current_user %>
+            <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+
+            <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+
+            <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+
+            <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+
+            <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+
+            <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+            
+
+        <% else %>
+        <!-- affichage jumbotron pour les utilisateurs non connectés -->
+          <div class="container my-5">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+              
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="bootstrap" viewBox="0 0 118 94">
+    <title>Bootstrap</title>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+  </symbol>
+  <symbol id="arrow-right-short" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+  </symbol>
+  <symbol id="check2-circle" viewBox="0 0 16 16">
+    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"></path>
+    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"></path>
+  </symbol>
+</svg>
+
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+    <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+      This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+    </p>
+    <div class="d-inline-flex gap-2 mb-5">
+      <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+        Call to action
+        <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+      </button>
+      <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+        Secondary link
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="container my-5">
+  <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+    <button type="button" class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill" aria-label="Close"></button>
+    <svg class="bi mt-5 mb-3" width="48" height="48"><use xlink:href="#check2-circle"></use></svg>
+    <h1 class="text-body-emphasis">Placeholder jumbotron</h1>
+    <p class="col-lg-6 mx-auto mb-4">
+      This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context to a page or section when no content is available and to encourage visitors to take a specific action.
+    </p>
+    <button class="btn btn-primary px-5 mb-5" type="button">
+      Call to action
+    </button>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="my-5">
+  <div class="p-5 text-center bg-body-tertiary">
+    <div class="container py-5">
+      <h1 class="text-body-emphasis">Full-width jumbotron</h1>
+      <p class="col-lg-8 mx-auto lead">
+        This takes the basic jumbotron above and makes its background edge-to-edge with a <code>.container</code> inside to align content. Similar to above, it's been recreated with built-in grid and utility classes.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <h1 class="text-body-emphasis">Basic jumbotron</h1>
+    <p class="lead">
+      This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in utility classes.
+    </p>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    
+
+
+
+        <div class="col-md-3 text-end">
+           <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+
+           <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+
+        </div>
+        <% end %>
+    </div>
+
+      <%= yield %>
+
+ 
+
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    
+3:    <html>
+4:      <head>
+5:        <title>MyGossipProject</title>
+6:        <meta name="viewport" content="width=device-width,initial-scale=1">
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <!-- Les balises link et script doivent être incluses dans le head -->
+10:      <!-- Bootstrap CSS -->
+11:        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+12:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+13:        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+14:        <!-- surcouche CSS -->
+15:    
+16:    
+17:        <!-- Fontawsome -->
+18:        <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+19:        
+20:    
+21:        <!-- CSS -->
+22:        <link rel="stylesheet" type="text/css" href="application.css">
+23:        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+24:    
+25:      </head>
+26:    
+27:    
+28:      <body data-turbo="false">   
+29:       <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+30:        <% if current_user %>
+31:          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+32:            <div class="col-md-3 mb-2 mb-md-0">
+33:              <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+34:                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+35:                  <use xlink:href="#bootstrap"></use>
+36:                </svg>
+37:              <% end %>
+38:            </div>
+39:    
+40:            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+41:              <% if current_user %>
+42:                <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+43:    
+44:                <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+45:    
+46:                <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+47:    
+48:                <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+49:    
+50:                <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+51:    
+52:                <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+53:                
+54:    
+55:            <% else %>
+56:            <!-- affichage jumbotron pour les utilisateurs non connectés -->
+57:              <div class="container my-5">
+58:                <div class="p-5 text-center bg-body-tertiary rounded-3">
+59:                  
+60:        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+61:          <symbol id="check2" viewBox="0 0 16 16">
+62:            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+63:          </symbol>
+64:          <symbol id="circle-half" viewBox="0 0 16 16">
+65:            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+66:          </symbol>
+67:          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+68:            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+69:            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+70:          </symbol>
+71:          <symbol id="sun-fill" viewBox="0 0 16 16">
+72:            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+73:          </symbol>
+74:        </svg>
+75:    
+76:        <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+77:          <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+78:            <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+79:            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+80:          </button>
+81:          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+82:            <li>
+83:              <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+84:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+85:                Light
+86:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+87:              </button>
+88:            </li>
+89:            <li>
+90:              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+91:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+92:                Dark
+93:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+94:              </button>
+95:            </li>
+96:            <li>
+97:              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+98:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+99:                Auto
+100:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+101:              </button>
+102:            </li>
+103:          </ul>
+104:        </div>
+105:    
+106:        
+107:    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+108:      <symbol id="bootstrap" viewBox="0 0 118 94">
+109:        <title>Bootstrap</title>
+110:        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+111:      </symbol>
+112:      <symbol id="arrow-right-short" viewBox="0 0 16 16">
+113:        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+114:      </symbol>
+115:      <symbol id="check2-circle" viewBox="0 0 16 16">
+116:        <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"></path>
+117:        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"></path>
+118:      </symbol>
+119:    </svg>
+120:    
+121:    <div class="container my-5">
+122:      <div class="p-5 text-center bg-body-tertiary rounded-3">
+123:        <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+124:        <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+125:        <p class="col-lg-8 mx-auto fs-5 text-muted">
+126:          This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+127:        </p>
+128:        <div class="d-inline-flex gap-2 mb-5">
+129:          <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+130:            Call to action
+131:            <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+132:          </button>
+133:          <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+134:            Secondary link
+135:          </button>
+136:        </div>
+137:      </div>
+138:    </div>
+139:    
+140:    <div class="b-example-divider"></div>
+141:    
+142:    <div class="container my-5">
+143:      <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+144:        <button type="button" class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill" aria-label="Close"></button>
+145:        <svg class="bi mt-5 mb-3" width="48" height="48"><use xlink:href="#check2-circle"></use></svg>
+146:        <h1 class="text-body-emphasis">Placeholder jumbotron</h1>
+147:        <p class="col-lg-6 mx-auto mb-4">
+148:          This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context to a page or section when no content is available and to encourage visitors to take a specific action.
+149:        </p>
+150:        <button class="btn btn-primary px-5 mb-5" type="button">
+151:          Call to action
+152:        </button>
+153:      </div>
+154:    </div>
+155:    
+156:    <div class="b-example-divider"></div>
+157:    
+158:    <div class="my-5">
+159:      <div class="p-5 text-center bg-body-tertiary">
+160:        <div class="container py-5">
+161:          <h1 class="text-body-emphasis">Full-width jumbotron</h1>
+162:          <p class="col-lg-8 mx-auto lead">
+163:            This takes the basic jumbotron above and makes its background edge-to-edge with a <code>.container</code> inside to align content. Similar to above, it's been recreated with built-in grid and utility classes.
+164:          </p>
+165:        </div>
+166:      </div>
+167:    </div>
+168:    
+169:    <div class="b-example-divider"></div>
+170:    
+171:    <div class="container my-5">
+172:      <div class="p-5 text-center bg-body-tertiary rounded-3">
+173:        <h1 class="text-body-emphasis">Basic jumbotron</h1>
+174:        <p class="lead">
+175:          This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in utility classes.
+176:        </p>
+177:      </div>
+178:    </div>
+179:    
+180:    <div class="b-example-divider"></div>
+181:    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+182:    
+183:        
+184:    
+185:    
+186:    
+187:            <div class="col-md-3 text-end">
+188:               <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+189:    
+190:               <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+191:    
+192:            </div>
+193:            <% end %>
+194:        </div>
+195:    
+196:          <%= yield %>
+197:    
+198:     
+199:    
+200:      </body>
+201:    </html>
+  
+app/views/layouts/application.html.erb:204: syntax error, unexpected end-of-input
+Started GET "/gossips" for 127.0.0.1 at 2023-11-02 21:35:53 +0100
+Processing by GossipsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gossips/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/gossips/index.html.erb:5
+  Rendered gossips/index.html.erb within layouts/application (Duration: 23.9ms | Allocations: 5266)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 6889)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 7.4ms | Allocations: 9679)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+
+<html>
+  <head>
+    <title>MyGossipProject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Les balises link et script doivent être incluses dans le head -->
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- surcouche CSS -->
+
+
+    <!-- Fontawsome -->
+    <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="application.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+
+  <body data-turbo="false">   
+   <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+    <% if current_user %>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          <% end %>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <% if current_user %>
+            <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+
+            <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+
+            <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+
+            <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+
+            <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+
+            <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+            
+
+        <% else %>
+        <!-- affichage jumbotron pour les utilisateurs non connectés -->
+          <div class="container my-5">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+              
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="bootstrap" viewBox="0 0 118 94">
+    <title>Bootstrap</title>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+  </symbol>
+  <symbol id="arrow-right-short" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+  </symbol>
+  <symbol id="check2-circle" viewBox="0 0 16 16">
+    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"></path>
+    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"></path>
+  </symbol>
+</svg>
+
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+    <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+      This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+    </p>
+    <div class="d-inline-flex gap-2 mb-5">
+      <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+        Call to action
+        <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+      </button>
+      <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+        Secondary link
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="container my-5">
+  <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+    <button type="button" class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill" aria-label="Close"></button>
+    <svg class="bi mt-5 mb-3" width="48" height="48"><use xlink:href="#check2-circle"></use></svg>
+    <h1 class="text-body-emphasis">Placeholder jumbotron</h1>
+    <p class="col-lg-6 mx-auto mb-4">
+      This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context to a page or section when no content is available and to encourage visitors to take a specific action.
+    </p>
+    <button class="btn btn-primary px-5 mb-5" type="button">
+      Call to action
+    </button>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="my-5">
+  <div class="p-5 text-center bg-body-tertiary">
+    <div class="container py-5">
+      <h1 class="text-body-emphasis">Full-width jumbotron</h1>
+      <p class="col-lg-8 mx-auto lead">
+        This takes the basic jumbotron above and makes its background edge-to-edge with a <code>.container</code> inside to align content. Similar to above, it's been recreated with built-in grid and utility classes.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <h1 class="text-body-emphasis">Basic jumbotron</h1>
+    <p class="lead">
+      This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in utility classes.
+    </p>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    
+
+
+        <div class="col-md-3 text-end">
+           <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+
+           <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+
+        </div>
+        <% end %>
+    </div>
+
+      <%= yield %>
+
+ 
+
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    
+3:    <html>
+4:      <head>
+5:        <title>MyGossipProject</title>
+6:        <meta name="viewport" content="width=device-width,initial-scale=1">
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <!-- Les balises link et script doivent être incluses dans le head -->
+10:      <!-- Bootstrap CSS -->
+11:        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+12:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+13:        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+14:        <!-- surcouche CSS -->
+15:    
+16:    
+17:        <!-- Fontawsome -->
+18:        <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+19:        
+20:    
+21:        <!-- CSS -->
+22:        <link rel="stylesheet" type="text/css" href="application.css">
+23:        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+24:    
+25:      </head>
+26:    
+27:    
+28:      <body data-turbo="false">   
+29:       <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+30:        <% if current_user %>
+31:          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+32:            <div class="col-md-3 mb-2 mb-md-0">
+33:              <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+34:                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+35:                  <use xlink:href="#bootstrap"></use>
+36:                </svg>
+37:              <% end %>
+38:            </div>
+39:    
+40:            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+41:              <% if current_user %>
+42:                <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+43:    
+44:                <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+45:    
+46:                <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+47:    
+48:                <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+49:    
+50:                <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+51:    
+52:                <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+53:                
+54:    
+55:            <% else %>
+56:            <!-- affichage jumbotron pour les utilisateurs non connectés -->
+57:              <div class="container my-5">
+58:                <div class="p-5 text-center bg-body-tertiary rounded-3">
+59:                  
+60:        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+61:          <symbol id="check2" viewBox="0 0 16 16">
+62:            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+63:          </symbol>
+64:          <symbol id="circle-half" viewBox="0 0 16 16">
+65:            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+66:          </symbol>
+67:          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+68:            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+69:            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+70:          </symbol>
+71:          <symbol id="sun-fill" viewBox="0 0 16 16">
+72:            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+73:          </symbol>
+74:        </svg>
+75:    
+76:        <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+77:          <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+78:            <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+79:            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+80:          </button>
+81:          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+82:            <li>
+83:              <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+84:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+85:                Light
+86:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+87:              </button>
+88:            </li>
+89:            <li>
+90:              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+91:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+92:                Dark
+93:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+94:              </button>
+95:            </li>
+96:            <li>
+97:              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+98:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+99:                Auto
+100:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+101:              </button>
+102:            </li>
+103:          </ul>
+104:        </div>
+105:    
+106:        
+107:    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+108:      <symbol id="bootstrap" viewBox="0 0 118 94">
+109:        <title>Bootstrap</title>
+110:        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+111:      </symbol>
+112:      <symbol id="arrow-right-short" viewBox="0 0 16 16">
+113:        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+114:      </symbol>
+115:      <symbol id="check2-circle" viewBox="0 0 16 16">
+116:        <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"></path>
+117:        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"></path>
+118:      </symbol>
+119:    </svg>
+120:    
+121:    <div class="container my-5">
+122:      <div class="p-5 text-center bg-body-tertiary rounded-3">
+123:        <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+124:        <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+125:        <p class="col-lg-8 mx-auto fs-5 text-muted">
+126:          This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+127:        </p>
+128:        <div class="d-inline-flex gap-2 mb-5">
+129:          <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+130:            Call to action
+131:            <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+132:          </button>
+133:          <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+134:            Secondary link
+135:          </button>
+136:        </div>
+137:      </div>
+138:    </div>
+139:    
+140:    <div class="b-example-divider"></div>
+141:    
+142:    <div class="container my-5">
+143:      <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+144:        <button type="button" class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill" aria-label="Close"></button>
+145:        <svg class="bi mt-5 mb-3" width="48" height="48"><use xlink:href="#check2-circle"></use></svg>
+146:        <h1 class="text-body-emphasis">Placeholder jumbotron</h1>
+147:        <p class="col-lg-6 mx-auto mb-4">
+148:          This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context to a page or section when no content is available and to encourage visitors to take a specific action.
+149:        </p>
+150:        <button class="btn btn-primary px-5 mb-5" type="button">
+151:          Call to action
+152:        </button>
+153:      </div>
+154:    </div>
+155:    
+156:    <div class="b-example-divider"></div>
+157:    
+158:    <div class="my-5">
+159:      <div class="p-5 text-center bg-body-tertiary">
+160:        <div class="container py-5">
+161:          <h1 class="text-body-emphasis">Full-width jumbotron</h1>
+162:          <p class="col-lg-8 mx-auto lead">
+163:            This takes the basic jumbotron above and makes its background edge-to-edge with a <code>.container</code> inside to align content. Similar to above, it's been recreated with built-in grid and utility classes.
+164:          </p>
+165:        </div>
+166:      </div>
+167:    </div>
+168:    
+169:    <div class="b-example-divider"></div>
+170:    
+171:    <div class="container my-5">
+172:      <div class="p-5 text-center bg-body-tertiary rounded-3">
+173:        <h1 class="text-body-emphasis">Basic jumbotron</h1>
+174:        <p class="lead">
+175:          This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in utility classes.
+176:        </p>
+177:      </div>
+178:    </div>
+179:    
+180:    <div class="b-example-divider"></div>
+181:    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+182:    
+183:        
+184:    
+185:    
+186:            <div class="col-md-3 text-end">
+187:               <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+188:    
+189:               <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+190:    
+191:            </div>
+192:            <% end %>
+193:        </div>
+194:    
+195:          <%= yield %>
+196:    
+197:     
+198:    
+199:      </body>
+200:    </html>
+  
+app/views/layouts/application.html.erb:203: syntax error, unexpected end-of-input
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:36:12 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 44.4ms | Allocations: 11888)
+  Rendered layout layouts/application.html.erb (Duration: 48.5ms | Allocations: 13442)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 4.3ms | Allocations: 13890)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+
+<html>
+  <head>
+    <title>MyGossipProject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Les balises link et script doivent être incluses dans le head -->
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- surcouche CSS -->
+
+
+    <!-- Fontawsome -->
+    <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="application.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+
+  <body data-turbo="false">   
+   <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+    <% if current_user %>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          <% end %>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <% if current_user %>
+            <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+
+            <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+
+            <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+
+            <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+
+            <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+
+            <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+            
+
+        <% else %>
+        <!-- affichage jumbotron pour les utilisateurs non connectés -->
+          <div class="container my-5">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+              
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="bootstrap" viewBox="0 0 118 94">
+    <title>Bootstrap</title>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+  </symbol>
+  <symbol id="arrow-right-short" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+  </symbol>
+  <symbol id="check2-circle" viewBox="0 0 16 16">
+    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"></path>
+    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"></path>
+  </symbol>
+</svg>
+
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+    <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+      This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+    </p>
+    <div class="d-inline-flex gap-2 mb-5">
+      <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+        Call to action
+        <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+      </button>
+      <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+        Secondary link
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="container my-5">
+  <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+    <button type="button" class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill" aria-label="Close"></button>
+    <svg class="bi mt-5 mb-3" width="48" height="48"><use xlink:href="#check2-circle"></use></svg>
+    <h1 class="text-body-emphasis">Placeholder jumbotron</h1>
+    <p class="col-lg-6 mx-auto mb-4">
+      This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context to a page or section when no content is available and to encourage visitors to take a specific action.
+    </p>
+    <button class="btn btn-primary px-5 mb-5" type="button">
+      Call to action
+    </button>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="my-5">
+  <div class="p-5 text-center bg-body-tertiary">
+    <div class="container py-5">
+      <h1 class="text-body-emphasis">Full-width jumbotron</h1>
+      <p class="col-lg-8 mx-auto lead">
+        This takes the basic jumbotron above and makes its background edge-to-edge with a <code>.container</code> inside to align content. Similar to above, it's been recreated with built-in grid and utility classes.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <h1 class="text-body-emphasis">Basic jumbotron</h1>
+    <p class="lead">
+      This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in utility classes.
+    </p>
+  </div>
+</div>
+
+<div class="b-example-divider"></div>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    
+
+
+        <div class="col-md-3 text-end">
+           <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+
+           <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+
+        </div>
+        <% end %>
+    </div>
+
+      <%= yield %>
+
+ 
+
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    
+3:    <html>
+4:      <head>
+5:        <title>MyGossipProject</title>
+6:        <meta name="viewport" content="width=device-width,initial-scale=1">
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <!-- Les balises link et script doivent être incluses dans le head -->
+10:      <!-- Bootstrap CSS -->
+11:        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+12:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+13:        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+14:        <!-- surcouche CSS -->
+15:    
+16:    
+17:        <!-- Fontawsome -->
+18:        <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+19:        
+20:    
+21:        <!-- CSS -->
+22:        <link rel="stylesheet" type="text/css" href="application.css">
+23:        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+24:    
+25:      </head>
+26:    
+27:    
+28:      <body data-turbo="false">   
+29:       <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+30:        <% if current_user %>
+31:          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+32:            <div class="col-md-3 mb-2 mb-md-0">
+33:              <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+34:                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+35:                  <use xlink:href="#bootstrap"></use>
+36:                </svg>
+37:              <% end %>
+38:            </div>
+39:    
+40:            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+41:              <% if current_user %>
+42:                <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+43:    
+44:                <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+45:    
+46:                <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+47:    
+48:                <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+49:    
+50:                <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+51:    
+52:                <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+53:                
+54:    
+55:            <% else %>
+56:            <!-- affichage jumbotron pour les utilisateurs non connectés -->
+57:              <div class="container my-5">
+58:                <div class="p-5 text-center bg-body-tertiary rounded-3">
+59:                  
+60:        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+61:          <symbol id="check2" viewBox="0 0 16 16">
+62:            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+63:          </symbol>
+64:          <symbol id="circle-half" viewBox="0 0 16 16">
+65:            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+66:          </symbol>
+67:          <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+68:            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+69:            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+70:          </symbol>
+71:          <symbol id="sun-fill" viewBox="0 0 16 16">
+72:            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+73:          </symbol>
+74:        </svg>
+75:    
+76:        <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+77:          <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+78:            <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+79:            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+80:          </button>
+81:          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+82:            <li>
+83:              <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+84:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+85:                Light
+86:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+87:              </button>
+88:            </li>
+89:            <li>
+90:              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+91:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+92:                Dark
+93:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+94:              </button>
+95:            </li>
+96:            <li>
+97:              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+98:                <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+99:                Auto
+100:                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+101:              </button>
+102:            </li>
+103:          </ul>
+104:        </div>
+105:    
+106:        
+107:    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+108:      <symbol id="bootstrap" viewBox="0 0 118 94">
+109:        <title>Bootstrap</title>
+110:        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+111:      </symbol>
+112:      <symbol id="arrow-right-short" viewBox="0 0 16 16">
+113:        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+114:      </symbol>
+115:      <symbol id="check2-circle" viewBox="0 0 16 16">
+116:        <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"></path>
+117:        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"></path>
+118:      </symbol>
+119:    </svg>
+120:    
+121:    <div class="container my-5">
+122:      <div class="p-5 text-center bg-body-tertiary rounded-3">
+123:        <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+124:        <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+125:        <p class="col-lg-8 mx-auto fs-5 text-muted">
+126:          This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
+127:        </p>
+128:        <div class="d-inline-flex gap-2 mb-5">
+129:          <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+130:            Call to action
+131:            <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+132:          </button>
+133:          <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+134:            Secondary link
+135:          </button>
+136:        </div>
+137:      </div>
+138:    </div>
+139:    
+140:    <div class="b-example-divider"></div>
+141:    
+142:    <div class="container my-5">
+143:      <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+144:        <button type="button" class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill" aria-label="Close"></button>
+145:        <svg class="bi mt-5 mb-3" width="48" height="48"><use xlink:href="#check2-circle"></use></svg>
+146:        <h1 class="text-body-emphasis">Placeholder jumbotron</h1>
+147:        <p class="col-lg-6 mx-auto mb-4">
+148:          This faded back jumbotron is useful for placeholder content. It's also a great way to add a bit of context to a page or section when no content is available and to encourage visitors to take a specific action.
+149:        </p>
+150:        <button class="btn btn-primary px-5 mb-5" type="button">
+151:          Call to action
+152:        </button>
+153:      </div>
+154:    </div>
+155:    
+156:    <div class="b-example-divider"></div>
+157:    
+158:    <div class="my-5">
+159:      <div class="p-5 text-center bg-body-tertiary">
+160:        <div class="container py-5">
+161:          <h1 class="text-body-emphasis">Full-width jumbotron</h1>
+162:          <p class="col-lg-8 mx-auto lead">
+163:            This takes the basic jumbotron above and makes its background edge-to-edge with a <code>.container</code> inside to align content. Similar to above, it's been recreated with built-in grid and utility classes.
+164:          </p>
+165:        </div>
+166:      </div>
+167:    </div>
+168:    
+169:    <div class="b-example-divider"></div>
+170:    
+171:    <div class="container my-5">
+172:      <div class="p-5 text-center bg-body-tertiary rounded-3">
+173:        <h1 class="text-body-emphasis">Basic jumbotron</h1>
+174:        <p class="lead">
+175:          This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in utility classes.
+176:        </p>
+177:      </div>
+178:    </div>
+179:    
+180:    <div class="b-example-divider"></div>
+181:    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+182:    
+183:        
+184:    
+185:    
+186:            <div class="col-md-3 text-end">
+187:               <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+188:    
+189:               <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+190:    
+191:            </div>
+192:            <% end %>
+193:        </div>
+194:    
+195:          <%= yield %>
+196:    
+197:     
+198:    
+199:      </body>
+200:    </html>
+  
+app/views/layouts/application.html.erb:203: syntax error, unexpected end-of-input
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:36:52 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (1.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 145.3ms | Allocations: 14691)
+  Rendered layout layouts/application.html.erb (Duration: 150.4ms | Allocations: 16124)
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 41.3ms | Allocations: 18913)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+
+<html>
+  <head>
+    <title>MyGossipProject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Les balises link et script doivent être incluses dans le head -->
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- surcouche CSS -->
+
+
+    <!-- Fontawsome -->
+    <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="application.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+
+  <body data-turbo="false">   
+   <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+    <% if current_user %>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          <% end %>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <% if current_user %>
+            <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+
+            <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+
+            <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+
+            <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+
+            <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+
+            <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+            
+
+        <% else %>
+        <!-- affichage jumbotron pour les utilisateurs non connectés -->
+          <div class="container my-5">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+              
+        <div class="col-md-3 text-end">
+           <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+
+           <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+
+        </div>
+        <% end %>
+    </div>
+
+      <%= yield %>
+
+ 
+
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    
+3:    <html>
+4:      <head>
+5:        <title>MyGossipProject</title>
+6:        <meta name="viewport" content="width=device-width,initial-scale=1">
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <!-- Les balises link et script doivent être incluses dans le head -->
+10:      <!-- Bootstrap CSS -->
+11:        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+12:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+13:        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+14:        <!-- surcouche CSS -->
+15:    
+16:    
+17:        <!-- Fontawsome -->
+18:        <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+19:        
+20:    
+21:        <!-- CSS -->
+22:        <link rel="stylesheet" type="text/css" href="application.css">
+23:        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+24:    
+25:      </head>
+26:    
+27:    
+28:      <body data-turbo="false">   
+29:       <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+30:        <% if current_user %>
+31:          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+32:            <div class="col-md-3 mb-2 mb-md-0">
+33:              <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+34:                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+35:                  <use xlink:href="#bootstrap"></use>
+36:                </svg>
+37:              <% end %>
+38:            </div>
+39:    
+40:            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+41:              <% if current_user %>
+42:                <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+43:    
+44:                <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+45:    
+46:                <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+47:    
+48:                <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+49:    
+50:                <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+51:    
+52:                <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+53:                
+54:    
+55:            <% else %>
+56:            <!-- affichage jumbotron pour les utilisateurs non connectés -->
+57:              <div class="container my-5">
+58:                <div class="p-5 text-center bg-body-tertiary rounded-3">
+59:                  
+60:            <div class="col-md-3 text-end">
+61:               <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+62:    
+63:               <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+64:    
+65:            </div>
+66:            <% end %>
+67:        </div>
+68:    
+69:          <%= yield %>
+70:    
+71:     
+72:    
+73:      </body>
+74:    </html>
+  
+app/views/layouts/application.html.erb:77: syntax error, unexpected end-of-input
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:37:08 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 50.8ms | Allocations: 14749)
+  Rendered layout layouts/application.html.erb (Duration: 53.6ms | Allocations: 16182)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 14.8ms | Allocations: 18970)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+
+<html>
+  <head>
+    <title>MyGossipProject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Les balises link et script doivent être incluses dans le head -->
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- surcouche CSS -->
+
+
+    <!-- Fontawsome -->
+    <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="application.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+
+  <body data-turbo="false">   
+   <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+    <% if current_user %>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          <% end %>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <% if current_user %>
+            <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+
+            <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+
+            <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+
+            <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+
+            <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+
+            <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+            
+
+        <% else %>
+        <!-- affichage jumbotron pour les utilisateurs non connectés -->
+          <div class="container my-5">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+              
+        <div class="col-md-3 text-end">
+           <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+
+           <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+
+        </div>
+        <% end %>
+    </div>
+
+      <%= yield %>
+
+ 
+
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    
+3:    <html>
+4:      <head>
+5:        <title>MyGossipProject</title>
+6:        <meta name="viewport" content="width=device-width,initial-scale=1">
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <!-- Les balises link et script doivent être incluses dans le head -->
+10:      <!-- Bootstrap CSS -->
+11:        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+12:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+13:        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+14:        <!-- surcouche CSS -->
+15:    
+16:    
+17:        <!-- Fontawsome -->
+18:        <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+19:        
+20:    
+21:        <!-- CSS -->
+22:        <link rel="stylesheet" type="text/css" href="application.css">
+23:        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+24:    
+25:      </head>
+26:    
+27:    
+28:      <body data-turbo="false">   
+29:       <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+30:        <% if current_user %>
+31:          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+32:            <div class="col-md-3 mb-2 mb-md-0">
+33:              <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+34:                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+35:                  <use xlink:href="#bootstrap"></use>
+36:                </svg>
+37:              <% end %>
+38:            </div>
+39:    
+40:            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+41:              <% if current_user %>
+42:                <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+43:    
+44:                <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+45:    
+46:                <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+47:    
+48:                <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+49:    
+50:                <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+51:    
+52:                <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+53:                
+54:    
+55:            <% else %>
+56:            <!-- affichage jumbotron pour les utilisateurs non connectés -->
+57:              <div class="container my-5">
+58:                <div class="p-5 text-center bg-body-tertiary rounded-3">
+59:                  
+60:            <div class="col-md-3 text-end">
+61:               <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+62:    
+63:               <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+64:    
+65:            </div>
+66:            <% end %>
+67:        </div>
+68:    
+69:          <%= yield %>
+70:    
+71:     
+72:    
+73:      </body>
+74:    </html>
+  
+app/views/layouts/application.html.erb:77: syntax error, unexpected end-of-input
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:37:56 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 56.5ms | Allocations: 14691)
+  Rendered layout layouts/application.html.erb (Duration: 59.1ms | Allocations: 16121)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 11.7ms | Allocations: 18909)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+
+<html>
+  <head>
+    <title>MyGossipProject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Les balises link et script doivent être incluses dans le head -->
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- surcouche CSS -->
+
+
+    <!-- Fontawsome -->
+    <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="application.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+
+  <body data-turbo="false">   
+   <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+    <% if current_user %>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          <% end %>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <% if current_user %>
+            <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+
+            <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+
+            <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+
+            <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+
+            <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+
+            <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+            
+
+        <% else %>
+        <!-- Liens de navigation pour les utilisateurs non connectés -->
+        <div class="col-md-3 text-end">
+           <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+
+           <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+
+        </div>
+        <% end %>
+    </div>
+
+      <%= yield %>
+
+ 
+
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    
+3:    <html>
+4:      <head>
+5:        <title>MyGossipProject</title>
+6:        <meta name="viewport" content="width=device-width,initial-scale=1">
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <!-- Les balises link et script doivent être incluses dans le head -->
+10:      <!-- Bootstrap CSS -->
+11:        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+12:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+13:        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+14:        <!-- surcouche CSS -->
+15:    
+16:    
+17:        <!-- Fontawsome -->
+18:        <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+19:        
+20:    
+21:        <!-- CSS -->
+22:        <link rel="stylesheet" type="text/css" href="application.css">
+23:        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+24:    
+25:      </head>
+26:    
+27:    
+28:      <body data-turbo="false">   
+29:       <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+30:        <% if current_user %>
+31:          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+32:            <div class="col-md-3 mb-2 mb-md-0">
+33:              <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+34:                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+35:                  <use xlink:href="#bootstrap"></use>
+36:                </svg>
+37:              <% end %>
+38:            </div>
+39:    
+40:            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+41:              <% if current_user %>
+42:                <%= link_to "The Gossip Project", home_path, class: "nav-link px-2 link-secondary" %>
+43:    
+44:                <%= link_to "Listes de gossips", gossips_path, class: "nav-link px-2" %>
+45:    
+46:                <%= link_to "Liste des gossipers", users_path, class: "nav-link px-2" %>
+47:    
+48:                <%= link_to "Notre équipe", team_path, class: "nav-link px-2" %>
+49:    
+50:                <%= link_to "Contact", contact_path, class: "nav-link px-2" %>
+51:    
+52:                <%= button_to "Déconnexion", session_path(session.id), method: :delete, class: "btn-custom-logout" %>
+53:                
+54:    
+55:            <% else %>
+56:            <!-- Liens de navigation pour les utilisateurs non connectés -->
+57:            <div class="col-md-3 text-end">
+58:               <%= link_to "Connexion", new_session_path, class: "btn btn-outline-primary me-2" %>
+59:    
+60:               <%= link_to "Inscription", new_user_path, class: "btn btn-primary" %>
+61:    
+62:            </div>
+63:            <% end %>
+64:        </div>
+65:    
+66:          <%= yield %>
+67:    
+68:     
+69:    
+70:      </body>
+71:    </html>
+  
+app/views/layouts/application.html.erb:74: syntax error, unexpected end-of-input
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:39:21 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (5.5ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 150.3ms | Allocations: 14691)
+  Rendered layout layouts/application.html.erb (Duration: 152.9ms | Allocations: 15849)
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 46.7ms | Allocations: 18637)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+
+<html>
+  <head>
+    <title>MyGossipProject</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Les balises link et script doivent être incluses dans le head -->
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- surcouche CSS -->
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="application.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body data-turbo="false">
+    <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+    <% if current_user %>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+            <svg class="bi" width="40" height="32" role="img"
+
+):
+1:    <!DOCTYPE html>
+2:    
+3:    <html>
+4:      <head>
+5:        <title>MyGossipProject</title>
+6:        <meta name="viewport" content="width=device-width,initial-scale=1">
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <!-- Les balises link et script doivent être incluses dans le head -->
+10:      <!-- Bootstrap CSS -->
+11:        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+12:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+13:        </script>
+14:        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+15:        <!-- surcouche CSS -->
+16:    
+17:        <!-- Fontawesome -->
+18:        <script src="https://kit.fontawesome.com/0c57e11e06.js" crossorigin="anonymous"></script>
+19:        
+20:    
+21:        <!-- CSS -->
+22:        <link rel="stylesheet" type="text/css" href="application.css">
+23:        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+24:      </head>
+25:    
+26:      <body data-turbo="false">
+27:        <!-- Condition pour afficher la navbar si l'utilisateur est connecté -->
+28:        <% if current_user %>
+29:          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+30:            <div class="col-md-3 mb-2 mb-md-0">
+31:              <%= link_to "/home", class: "d-inline-flex link-body-emphasis text-decoration-none" do %>
+32:                <svg class="bi" width="40" height="32" role="img"
+  
+app/views/layouts/application.html.erb:35: syntax error, unexpected end-of-input
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:39:57 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:41
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 57.4ms | Allocations: 14691)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 96.4ms | Allocations: 16732)
+Completed 200 OK in 115ms (Views: 88.4ms | ActiveRecord: 12.7ms | Allocations: 19513)
+
+
+Started GET "/application.css" for 127.0.0.1 at 2023-11-02 21:39:57 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/application.css" for 127.0.0.1 at 2023-11-02 21:39:58 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:42:01 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (4.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:45
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 67.1ms | Allocations: 15024)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 85.7ms | Allocations: 17057)
+Completed 200 OK in 104ms (Views: 77.6ms | ActiveRecord: 15.3ms | Allocations: 19838)
+
+
+Started GET "/application.css" for 127.0.0.1 at 2023-11-02 21:42:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/gossips/new" for 127.0.0.1 at 2023-11-02 21:42:07 +0100
+Processing by GossipsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gossips/new.html.erb within layouts/application
+  Rendered gossips/new.html.erb within layouts/application (Duration: 37.0ms | Allocations: 2146)
+  [1m[36mUser Load (43.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 120.5ms | Allocations: 3888)
+Completed 200 OK in 131ms (Views: 80.6ms | ActiveRecord: 43.5ms | Allocations: 4343)
+
+
+Started GET "/gossips/application.css" for 127.0.0.1 at 2023-11-02 21:42:07 +0100
+Processing by GossipsController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+Completed 404 Not Found in 76ms (ActiveRecord: 0.3ms | Allocations: 1344)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gossip with 'id'=application):
+  
+app/controllers/gossips_controller.rb:4:in `show'
+Started POST "/gossips" for 127.0.0.1 at 2023-11-02 21:42:31 +0100
+Processing by GossipsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"test dernier commit", "content"=>"test dernier commit test dernier commit test dernier commit test dernier commit", "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gossips_controller.rb:22:in `create'
+  [1m[36mGossip Create (67.7ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test dernier commit"], ["content", "test dernier commit test dernier commit test dernier commit test dernier commit"], ["user_id", 45], ["created_at", "2023-11-02 20:42:31.989414"], ["updated_at", "2023-11-02 20:42:31.989414"]]
+  ↳ app/controllers/gossips_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gossips_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/home
+Completed 302 Found in 94ms (ActiveRecord: 71.1ms | Allocations: 3134)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-11-02 21:42:32 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:45
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 31.1ms | Allocations: 4589)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 6084)
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 2.0ms | Allocations: 6320)
+
+
+Started GET "/application.css" for 127.0.0.1 at 2023-11-02 21:42:32 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/gossips/84" for 127.0.0.1 at 2023-11-02 21:42:36 +0100
+Processing by GossipsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+  [1m[36mComment Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 84]]
+  ↳ app/controllers/gossips_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gossips/show.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:25
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:36
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 84]]
+  ↳ app/views/gossips/show.html.erb:66
+  Rendered gossips/show.html.erb within layouts/application (Duration: 38.1ms | Allocations: 8947)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 10551)
+Completed 200 OK in 99ms (Views: 39.7ms | ActiveRecord: 14.6ms | Allocations: 22313)
+
+
+Started GET "/gossips/application.css" for 127.0.0.1 at 2023-11-02 21:42:36 +0100
+Processing by GossipsController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+Completed 404 Not Found in 14ms (ActiveRecord: 0.3ms | Allocations: 842)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gossip with 'id'=application):
+  
+app/controllers/gossips_controller.rb:4:in `show'
+Started POST "/gossips/84/comments" for 127.0.0.1 at 2023-11-02 21:42:45 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>"test commentaire test dernier commit", "commit"=>"Commenter", "gossip_id"=>"84"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mGossip Load (1.0ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mComment Create (41.0ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "test commentaire test dernier commit"], ["user_id", 45], ["gossip_id", 84], ["created_at", "2023-11-02 20:42:45.410539"], ["updated_at", "2023-11-02 20:42:45.410539"]]
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/gossips/84
+Completed 302 Found in 102ms (ActiveRecord: 47.9ms | Allocations: 8706)
+
+
+Started GET "/gossips/84" for 127.0.0.1 at 2023-11-02 21:42:45 +0100
+Processing by GossipsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+  [1m[36mComment Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 84]]
+  ↳ app/controllers/gossips_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gossips/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:25
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:36
+  [1m[36mComment Load (3.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 84]]
+  ↳ app/views/gossips/show.html.erb:66
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered gossips/show.html.erb within layouts/application (Duration: 18.1ms | Allocations: 3437)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 5057)
+Completed 200 OK in 37ms (Views: 25.2ms | ActiveRecord: 5.1ms | Allocations: 6242)
+
+
+Started GET "/gossips/application.css" for 127.0.0.1 at 2023-11-02 21:42:45 +0100
+Processing by GossipsController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms | Allocations: 839)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gossip with 'id'=application):
+  
+app/controllers/gossips_controller.rb:4:in `show'
+Started GET "/gossips/84/edit" for 127.0.0.1 at 2023-11-02 21:42:47 +0100
+Processing by GossipsController#edit as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:53:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering gossips/edit.html.erb within layouts/application
+  Rendered gossips/edit.html.erb within layouts/application (Duration: 69.2ms | Allocations: 1058)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 75.4ms | Allocations: 2801)
+Completed 200 OK in 81ms (Views: 76.1ms | ActiveRecord: 0.6ms | Allocations: 3494)
+
+
+Started GET "/gossips/84/application.css" for 127.0.0.1 at 2023-11-02 21:42:48 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/gossips/84/application.css"):
+  
+Started PATCH "/gossips/84" for 127.0.0.1 at 2023-11-02 21:43:02 +0100
+Processing by GossipsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gossip"=>{"title"=>"Modif : test dernier commit", "content"=>"Modif : test dernier commit test dernier commit test dernier commit test dernier commit", "user_id"=>"45"}, "commit"=>"Valider les modifications", "id"=>"84"}
+  [1m[36mGossip Load (1.0ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:60:in `update'
+[31mUnpermitted parameter: :user_id. Context: { controller: GossipsController, action: update, request: #<ActionDispatch::Request:0x000000010ee6e100>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "gossip"=>{"title"=>"Modif : test dernier commit", "content"=>"Modif : test dernier commit test dernier commit test dernier commit test dernier commit", "user_id"=>"45"}, "commit"=>"Valider les modifications", "controller"=>"gossips", "action"=>"update", "id"=>"84"} }[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gossips_controller.rb:63:in `update'
+  [1m[36mGossip Update (47.3ms)[0m  [1m[33mUPDATE "gossips" SET "title" = $1, "content" = $2, "updated_at" = $3 WHERE "gossips"."id" = $4[0m  [["title", "Modif : test dernier commit"], ["content", "Modif : test dernier commit test dernier commit test dernier commit test dernier commit"], ["updated_at", "2023-11-02 20:43:02.261693"], ["id", 84]]
+  ↳ app/controllers/gossips_controller.rb:63:in `update'
+  [1m[36mTRANSACTION (81.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gossips_controller.rb:63:in `update'
+Redirected to http://127.0.0.1:3000/gossips/84
+Completed 302 Found in 175ms (ActiveRecord: 129.8ms | Allocations: 2568)
+
+
+Started GET "/gossips/84" for 127.0.0.1 at 2023-11-02 21:43:02 +0100
+Processing by GossipsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 84]]
+  ↳ app/controllers/gossips_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gossips/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:25
+  [1m[36mCity Load (14.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:36
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 84]]
+  ↳ app/views/gossips/show.html.erb:66
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:69
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered gossips/show.html.erb within layouts/application (Duration: 34.7ms | Allocations: 3423)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 5043)
+Completed 200 OK in 44ms (Views: 23.8ms | ActiveRecord: 16.7ms | Allocations: 6229)
+
+
+Started GET "/gossips/application.css" for 127.0.0.1 at 2023-11-02 21:43:02 +0100
+Processing by GossipsController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mGossip Load (3.8ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/gossips_controller.rb:4:in `show'
+Completed 404 Not Found in 7ms (ActiveRecord: 3.7ms | Allocations: 841)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gossip with 'id'=application):
+  
+app/controllers/gossips_controller.rb:4:in `show'
