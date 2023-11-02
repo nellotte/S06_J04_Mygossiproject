@@ -18,19 +18,15 @@ class SessionsController < ApplicationController
       redirect_to "/home"
       flash[:session_success] = "Connecté avec succès!"
     else
-      flash.now[:danger] = 'Invalid email/password combination'
+      flash.now[:session_ko] = 'Les informations de connexion ne sont pas correctes'
       render 'new'
-      # Afficher les erreurs en cas d'échec
-      puts "$" * 60
-      puts @user.errors.full_messages
-      puts "$" * 60
     end
   end
 
 
   def destroy
     session.delete(:user_id)
-    redirect_to new_session_path 
+    redirect_to "/sessions/new"
     flash[:logout_success] = "Déconnecté avec succès!"
   end
 

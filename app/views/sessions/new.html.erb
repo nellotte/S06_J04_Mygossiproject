@@ -7,6 +7,13 @@
   </div>
 <% end %>
 
+<!-- alerte connexion KO-->
+<% if flash[:session_ko] %>
+  <div class="alert alert-danger">
+    <%= flash[:session_ko] %>
+  </div>
+<% end %>
+
 <%= form_tag(sessions_path, method: "post", class: "mx-4 my-4") do %>
   <div class="form-group mb-3">
     <%= label_tag :email, "Email" %>

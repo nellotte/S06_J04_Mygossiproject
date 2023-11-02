@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/home', to: 'home#home'
 
   resources :gossips do
-    resources :comments,  only: [:index, :new, :create, :destroy]
+    resources :comments,  only: [:new, :create, :destroy]
   end
 
   resources :users

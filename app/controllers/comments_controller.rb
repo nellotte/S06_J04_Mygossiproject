@@ -1,43 +1,34 @@
 class CommentsController < ApplicationController
-  def index
-    Comment.all
+
+  def new
+    # Méthode qui crée un commentaire vide et l'envoie à une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
+    @comment = Comment.new
   end
-end
 
-def show
-  @comment = Comment.find(params[:id])
-end
-
-def new
-  # Méthode qui crée un commentaire vide et l'envoie à une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
-  @comment = Comment.new
-end
-
-def create
-  nelly_guerin = User.find_by(first_name: "Nelly", last_name: "Guerin")
-  @gossip = Gossip.find(params[:gossip_id])
-  @comment = @gossip.comments.build(content: params[:comment][:content], user: nelly_guerin)
-
-  if @comment.save
-    redirect_to gossip_path(@gossip)
-    flash[:comment_success] = "Le commentaire a été créé avec succès."
-  else
-     # Afficher les erreurs en cas d'échec
-    puts "$" * 60
-    puts @comment.errors.full_messages
-    puts "$" * 60
-    flash[:comment_error] = "Échec lors de la création du commentaire."
-    render "gossips/show"
+  def create
+    if session[:user_id]
+      @comment = Comment.create!(content: params['content'], user_id: current_user.id, gossip_id: params[:gossip_id])
+      #flash[:success] = "Votre commentaire a été publié !"
+      redirect_to gossip_path(params[:gossip_id])
+    else
+      #flash[:alert] = "Vous devez être connecté pour commenter"
+      render "/sessions/new"
+    end
   end
+
+
+
+
+  def destroy
+    @comment = Comment.find_by(id: params[:id])
+    
+    if @comment
+      @gossip= @comment.gossip # Récupérez le gossip associé au commentaire
+      @comment.destroy
+      redirect_to gossip_path(@gossip), notice: 'Le commentaire a été supprimé avec succès.'
+    else
+      redirect_to gossip_path, alert: "Le commentaire n'a pas pu être trouvé ou supprimé."
+    end
+  end
+
 end
-
-
-def destroy
-  # Méthode qui récupère le potin concerné et le détruit en base
-  # Une fois la suppression faite, on redirige généralement vers la méthode index (pour afficher la liste à jour)
-  @comment = Comment.find_by(id: params[:id])
-  @comment.destroy
-  redirect_to gossip_path(@gossip.id), notice: 'Le commentaire a été supprimé avec succès.'
-end
-
-

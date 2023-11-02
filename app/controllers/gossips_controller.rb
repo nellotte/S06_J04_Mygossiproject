@@ -15,13 +15,7 @@ class GossipsController < ApplicationController
   end
 
   def create
-    nelly_guerin = User.find_by(first_name: "Nelly", last_name: "Guerin")
-    puts "$" * 60
-    puts "ceci est le contenu de params :"
-    puts params
-    puts "$" * 60
-
-    @gossip = Gossip.new(content: params[:content], title: params[:title], user: nelly_guerin)
+    @gossip = Gossip.new(content: params[:content], title: params[:title], user: current_user)
     puts @gossip.title
     if @gossip.save
       redirect_to "/home"

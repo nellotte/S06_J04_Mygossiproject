@@ -112,6 +112,24 @@ contrepetries =[
   "Ma soeur taille des jupes au Pirée.", 
   "Pour bien dîner, il faut être peu.", 
   "Auberge de Vendée.", 
+  "21) Chère collaboratrice, je vous laisse le choix dans la date.",
+  "Parachute.",
+  "Couper les nouilles au sécateur.",
+  "Empiler les culottes.",
+  "L'assistante brouille l'écoute de l'ingénieur qui a une panne de micro.",
+  "Un mine de chapeau.",
+  "Arriver à Béziers la veille.",
+  "J'ai des rebords à mes épaulettes.",
+  "Allons, chérie, essuie ça vite et bien.", 
+  "Ces colonnes de gauchistes se branchent devant l'Irak.", 
+  "La princesse aime la dotation du roi.", 
+  "La femme du capitaine à fait mander le marin à bord.", 
+  "À l'Éducation Nationale, on aime bien l'équipe en place.", 
+  "Escalope sur une salade.",
+  "Le gros entrepreneur pétrit le béton à la tonne.", 
+  "La jeune paysanne rêve devant un beau vendeur.", 
+  "L'archéologue met dans des caisses le produit de ses fouilles.",
+  "Cette femme habite les gîtes."
 ]
 Gossip.all.each do |gossip|
   3.times do
