@@ -13,11 +13,10 @@ Rails.application.routes.draw do
   resources :gossips do
     resources :comments,  only: [:index, :new, :create, :destroy]
   end
-  
+
   resources :users
   resources :cities
 
-  resources :sessions, only: [:new, :create, :destroy]
-  
+  resources :sessions, only: [:new, :create, :destroy]  
   
 end

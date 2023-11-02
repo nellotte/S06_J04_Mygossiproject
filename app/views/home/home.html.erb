@@ -19,6 +19,13 @@
   </div>
 <% end %>
 
+<!-- alerte connexion réussie -->
+<% if flash[:session_success] %>
+  <div class="alert alert-success">
+    <%= flash[:session_success] %>
+  </div>
+<% end %>
+
  <!-- bloc index des gossips -->
 
 <div class="container-fluid">

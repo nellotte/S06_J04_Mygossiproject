@@ -1,17 +1,24 @@
-<h1>Connecte-toi</h1>
+<h1 class="mt-4 mb-4">Connecte-toi</h1>
 
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<!-- alerte déconnexion réussie -->
+<% if flash[:logout_success] %>
+  <div class="alert alert-success">
+    <%= flash[:logout_success] %>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+<% end %>
+
+<%= form_tag(sessions_path, method: "post", class: "mx-4 my-4") do %>
+  <div class="form-group mb-3">
+    <%= label_tag :email, "Email" %>
+    <%= email_field_tag :email, nil, class: "form-control", placeholder: "Votre email" %>
+    <small id="emailHelp" class="form-text text-muted">vos information ne seront pas partagées.</small>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <small id="not_member" class="form-text text-muted">
+  <div class="form-group mb-3">
+    <%= label_tag :password, "Password" %>
+    <%= password_field_tag :password, nil, class: "form-control", placeholder: "Votre password" %>
+  </div>
+  <%= submit_tag "Submit", class: "btn btn-primary" %>
+  <small id="not_member" class="form-text text-muted mt-3">
     <%= link_to "Créer un compte", new_user_path %>
   </small>
-</form>
+<% end %>

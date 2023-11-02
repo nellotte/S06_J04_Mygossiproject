@@ -10,8 +10,6 @@
 require 'faker'
 Faker::Config.locale = 'fr'
 
-
-
 #Tag.destroy_all
 Comment.destroy_all
 Gossip.destroy_all
@@ -27,13 +25,19 @@ City.destroy_all
 end
 
 10.times do 
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  email = "#{first_name.downcase}.#{last_name.downcase}@email.com"
+
   User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
     description: Faker::Lorem.sentence(word_count: 5),
-    email: Faker::Internet.email,
     age: Faker::Number.within(range: 18..65),
-    city: City.all.sample
+    city: City.all.sample,
+    password: first_name, # Utilisez le prénom de super-héros comme mot de passe
+    password_confirmation: first_name
   )
 end
 
@@ -56,8 +60,10 @@ User.create(
   last_name: "Guerin",
   city: paris_city,
   description: Faker::Lorem.sentence(word_count: 5),
-  email: "nelly.guerin@gmail.com",
+  email: "nelly.guerin@email.com",
   age: "36",
+  password: "nelly",             # Utilisez le prénom de super-héros comme mot de passe
+  password_confirmation: "nelly"
 )
 
 # 10.times do
