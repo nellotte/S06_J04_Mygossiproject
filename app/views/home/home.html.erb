@@ -1,0 +1,39 @@
+<header class="jumbotron text-center gringas" style="background-image: url('<%= image_path("gossipgirlcrew.jpeg") %>'); background-size: cover;">
+  <div class="modal-static bg-transparent" tabindex="1">
+    <div class="texte_image" style="background-image: initial;">
+      <div class="modal- bg-transparent d-flex flex-column justify-content-center align-items-center h-100">
+        <!-- Utilisation des classes Bootstrap pour le dimensionnement automatique -->
+        <h1 class="modal-title text-dark fs-3 fs-md-4">BONJOUR !</h1>
+        <h3 class="modal-title text-dark fs-4 fs-md-5 mx-1 mx-md-5">Tous les potins de la promo THP Autome 2023</h3>
+        <a href="<%= new_gossip_path %>" class="btn btn-primary btn-lg btn-block mt-3 mt-md-4 mb-4">Balance un gossip</a>
+      </div>
+    </div>
+  </div>
+</header>
+        <h3 class="modal-title text-dark fs-4 fs-md-5 mx-1 mx-md-5">Les derniers potins ... ( va dans l'index pour lire l'ensemble des potins)</h3>
+
+<!-- alerte post bien créé -->
+<% if flash[:success] %>
+  <div class="alert alert-success">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
+ <!-- bloc index des gossips -->
+
+<div class="container-fluid">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% Gossip.order(created_at: :desc).limit(10).each do |gossip| %>
+      <div class="col">
+        <div class="card h-75">
+          <div class="card-body">
+            <h5 class="card-title"><%= gossip.title %></h5>
+            <%= "#{gossip.content.split[0, 20].join(' ')}..." %> <%# Les 20 premiers mots suivis de "..." %>
+            <%= link_to 'Lire la suite', gossip_path(gossip.id), class: 'btn btn-outline-primary' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

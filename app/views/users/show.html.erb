@@ -1,0 +1,16 @@
+<h1>Profil de <%= @user.first_name %> <%= @user.last_name %></h1>
+
+<p>ID: <%= @user.id %></p>
+<p>Description : <%= @user.description %></p>
+<p>E-mail : <%= @user.email %></p>
+<p>Âge : <%= @user.age %></p>
+
+<p>Ville : <%= @user.city.name %> (<%= @user.city.zip_code %>)</p>
+<h2>Gossips écrits <%= @user.first_name %></h2>
+<ul>
+  <% @gossips.each do |gossip| %>
+    <li>
+      <%= link_to gossip.title, gossip_path(gossip) %> (ID: <%= gossip.id %>)
+    </li>
+  <% end %>
+</ul>

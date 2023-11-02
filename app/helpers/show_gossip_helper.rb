@@ -1,0 +1,2 @@
+module ShowGossipHelper
+end

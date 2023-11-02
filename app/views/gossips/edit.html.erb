@@ -1,0 +1,24 @@
+<h1>Modifier le gossip</h1>
+
+    <!-- alerte post non créé -->
+    <% if flash[:error] %>
+      <div class="alert alert-danger">
+        <%= flash[:error] %>
+      </div>
+     <% end %>
+     <!--  -->
+
+<%= form_for @gossip, url: gossip_path(@gossip), method: :patch do |f| %>  
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br /> <br />
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <br /> <br />
+
+  <!-- Ne pas afficher le champ user_id, car vous ne voulez pas qu'il soit modifiable -->
+  <%= f.hidden_field :user_id, value: @gossip.user_id %>
+
+  <%= submit_tag "Valider les modifications" %>
+<% end %>
