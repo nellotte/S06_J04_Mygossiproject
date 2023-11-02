@@ -1,18 +1,26 @@
 <!-- bloc index des gossips -->
-
-<div class="container-fluid">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="my-4 text-center"> <!-- Ajout de marges en haut et en bas, et centrage horizontal -->
+    <h3 class="modal-title text-dark fs-4 fs-md-5 mx-1 mx-md-5 mb-5">Liste de tous les gossips <3 </h3>
+  </div><div class="container">
+  <div class="row">
     <% Gossip.all.each do |gossip| %>
-      <div class="col">
-        <div class="card h-75">
+      <div class="col-md-4 mb-4">
+        <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title"><%= gossip.title %></h5>
-             <%= "#{gossip.content.split[0, 20].join(' ')}..." %> <%# Divise en mots, puis affiche les 20 premiers mots et "..." %>
-            <%= link_to 'Lire la suite', gossip_path(gossip.id), class: 'btn btn-outline-primary' %>
+            <h6 class="card-subtitle mb-2 text-muted"><%= gossip.user.first_name %></h6>
+            <p class="card-text"><%= "#{gossip.content.split[0, 20].join(' ')}..." %></p>
+            <% if current_user %>
+              <%= link_to 'Lire la suite', gossip_path(gossip), class: 'card-link' %>
+            <% end %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
+
+
+
 

@@ -7,7 +7,7 @@
         <h3 class="modal-title text-dark fs-4 fs-md-6 mx-1 mx-md-5 mt-4 mb-4">Tous les potins de la promo THP Autome 2023</h3>
            <!-- Condition pour afficher le bouton si un utilisateur est connecté -->
         <% if current_user %>
-          <a href="<%= new_gossip_path %>" class="btn btn-primary btn-lg">Balance un gossip</a>
+          <a href="<%= new_gossip_path %>" class="btn btn-primary btn-lg mb-4">Balance un gossip</a>
         <% end %>
       </div>
     </div>
@@ -19,7 +19,7 @@
 
 <body>
   <div class="my-4 text-center"> <!-- Ajout de marges en haut et en bas, et centrage horizontal -->
-    <h3 class="modal-title text-dark fs-4 fs-md-5 mx-1 mx-md-5">Les derniers gossips ...</h3>
+    <h3 class="modal-title text-dark fs-4 fs-md-5 mx-1 mx-md-5 mb-5">Les derniers gossips ...</h3>
   </div>
     <% unless current_user %>
       <p class="text">Connecte-toi pour partager tes potins !</p>
@@ -41,20 +41,25 @@
   <!-- bloc index des gossips -->
 
   <div class="container-fluid">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <% Gossip.order(created_at: :desc).limit(5).each do |gossip| %>
-        <div class="col">
-          <div class="card h-75">
-            <div class="card-body">
-              <h5 class="card-title"><%= gossip.title %></h5>
-              <%= "#{gossip.content.split[0, 20].join(' ')}..." %> <%# Les 20 premiers mots suivis de "..." %>
-              <% if current_user %>
-                <%= link_to 'Lire la suite', gossip_path(gossip.id), class: 'btn btn-outline-primary' %>
-              <% end %>
-            </div>
+
+<!-- Bloc index des gossips -->
+<div class="container">
+  <div class="row">
+    <% Gossip.order(created_at: :desc).limit(5).each do |gossip| %>
+      <div class="col-md-4 mb-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= gossip.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= gossip.user.first_name %></h6>
+            <p class="card-text"><%= "#{gossip.content.split[0, 20].join(' ')}..." %></p>
+            <% if current_user %>
+              <%= link_to 'Lire la suite', gossip_path(gossip), class: 'card-link' %>
+            <% end %>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
+</div>
+
 </header>
