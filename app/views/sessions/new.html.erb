@@ -24,6 +24,13 @@
     <%= label_tag :password, "Password" %>
     <%= password_field_tag :password, nil, class: "form-control", placeholder: "Votre password" %>
   </div>
+
+
+  <div class="field my-2">
+    <%= label_tag :remember_me, 'Se souvenir de moi' %>
+    <%= check_box_tag :remember_me %>
+  </div>
+  
   <%= submit_tag "Submit", class: "btn btn-primary" %>
   <small id="not_member" class="form-text text-muted mt-3">
     <%= link_to "Créer un compte", new_user_path %>

@@ -46162,3 +46162,1275 @@ Completed 404 Not Found in 55ms (ActiveRecord: 48.1ms | Allocations: 841)
 ActiveRecord::RecordNotFound (Couldn't find Gossip with 'id'=application):
   
 app/controllers/gossips_controller.rb:4:in `show'
+  [1m[35m (47.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7549384849771970100)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (48.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (96.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddRememberDigestToUsers (20231103124549)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (189.1ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231103124549') RETURNING "version"[0m
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7549384849771970100)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-11-03 14:28:45 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (46.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nellyguerin/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nellyguerin/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.2ms | Allocations: 374)
+Completed 200 OK in 1395ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 283051)
+
+
+Started GET "/home" for ::1 at 2023-11-03 14:28:48 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (281.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (40.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (107.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  Rendered home/home.html.erb within layouts/application (Duration: 1178.1ms | Allocations: 57840)
+  Rendered layout layouts/application.html.erb (Duration: 1197.7ms | Allocations: 59625)
+Completed 200 OK in 1356ms (Views: 601.3ms | ActiveRecord: 601.0ms | Allocations: 68705)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 14:28:50 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/users/new" for ::1 at 2023-11-03 14:29:19 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1678)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 2820)
+Completed 200 OK in 62ms (Views: 57.0ms | ActiveRecord: 0.0ms | Allocations: 3308)
+
+
+Started GET "/users/application.css" for ::1 at 2023-11-03 14:29:19 +0100
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mUser Load (25.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 404 Not Found in 33ms (ActiveRecord: 25.1ms | Allocations: 1433)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=application):
+  
+app/controllers/users_controller.rb:4:in `show'
+Started GET "/users/new" for ::1 at 2023-11-03 14:30:39 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2234)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2327)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 8.5ms | Allocations: 10294)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<ActionView::Base:0x00000000012958>):
+    26:   </div>
+    27: 
+    28:   <div class="field my-2">
+    29:     <%= f.label :remember_me, 'Se souvenir de moi' %>
+    30:     <%= f.check_box :remember_me %>
+    31:   </div>
+    32: 
+  
+app/views/users/new.html.erb:29
+app/views/users/new.html.erb:3
+Started GET "/users/new" for ::1 at 2023-11-03 14:34:48 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1680)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 3359)
+Completed 200 OK in 113ms (Views: 42.8ms | ActiveRecord: 11.6ms | Allocations: 11337)
+
+
+Started GET "/users/application.css" for ::1 at 2023-11-03 14:34:49 +0100
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 404 Not Found in 27ms (ActiveRecord: 5.9ms | Allocations: 4537)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=application):
+  
+app/controllers/users_controller.rb:4:in `show'
+Started GET "/users/new" for ::1 at 2023-11-03 14:37:07 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1678)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 3357)
+Completed 200 OK in 188ms (Views: 28.4ms | ActiveRecord: 46.7ms | Allocations: 11333)
+
+
+Started GET "/users/new" for ::1 at 2023-11-03 14:37:12 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1702)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1947)
+
+
+Started GET "/users/application.css" for ::1 at 2023-11-03 14:37:12 +0100
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 404 Not Found in 9ms (ActiveRecord: 0.4ms | Allocations: 1449)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=application):
+  
+app/controllers/users_controller.rb:4:in `show'
+Started GET "/sessions/new" for ::1 at 2023-11-03 14:37:45 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 1958)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 2392)
+
+
+Started GET "/sessions/application.css" for ::1 at 2023-11-03 14:37:45 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/application.css"):
+  
+Started GET "/sessions/new" for ::1 at 2023-11-03 14:38:20 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 930)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2608)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 3665)
+
+
+Started GET "/sessions/application.css" for ::1 at 2023-11-03 14:38:21 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/application.css"):
+  
+Started GET "/sessions/new" for ::1 at 2023-11-03 14:53:02 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 925)
+  Rendered layout layouts/application.html.erb (Duration: 52.8ms | Allocations: 2603)
+Completed 200 OK in 69ms (Views: 61.8ms | ActiveRecord: 0.0ms | Allocations: 3660)
+
+
+Started GET "/sessions/application.css" for ::1 at 2023-11-03 14:53:03 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/application.css"):
+  
+Started GET "/users/new" for ::1 at 2023-11-03 14:53:06 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1613)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2763)
+Completed 200 OK in 149ms (Views: 9.6ms | ActiveRecord: 30.5ms | Allocations: 12925)
+
+
+Started GET "/users/application.css" for ::1 at 2023-11-03 14:53:07 +0100
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 404 Not Found in 13ms (ActiveRecord: 1.1ms | Allocations: 1561)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=application):
+  
+app/controllers/users_controller.rb:4:in `show'
+Started POST "/users" for ::1 at 2023-11-03 14:53:43 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Manu", "last_name"=>"Macron", "email"=>"manu.macron@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Valider"}
+  [1m[36mCity Load (57.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1 AND "cities"."zip_code" = $2 LIMIT $3[0m  [["name", "Paris"], ["zip_code", "75011"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (28.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Exists? (31.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "manu.macron@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Create (79.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at", "password_digest", "remember_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Manu"], ["last_name", "Macron"], ["description", nil], ["email", "manu.macron@email.com"], ["age", nil], ["city_id", 44], ["created_at", "2023-11-03 13:53:43.572581"], ["updated_at", "2023-11-03 13:53:43.572581"], ["password_digest", "[FILTERED]"], ["remember_digest", nil]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+Redirected to http://[::1]:3000/home
+Completed 302 Found in 630ms (ActiveRecord: 201.0ms | Allocations: 11073)
+
+
+Started GET "/home" for ::1 at 2023-11-03 14:53:43 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mGossip Load (1.5ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (22.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 190.6ms | Allocations: 11608)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 203.9ms | Allocations: 12945)
+Completed 200 OK in 297ms (Views: 150.8ms | ActiveRecord: 57.9ms | Allocations: 14882)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 14:53:44 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/users/new" for ::1 at 2023-11-03 14:54:08 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 579)
+  [1m[36mUser Load (90.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 100.2ms | Allocations: 2133)
+Completed 200 OK in 102ms (Views: 10.8ms | ActiveRecord: 90.4ms | Allocations: 2377)
+
+
+Started GET "/users/application.css" for ::1 at 2023-11-03 14:54:08 +0100
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 404 Not Found in 13ms (ActiveRecord: 10.2ms | Allocations: 862)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=application):
+  
+app/controllers/users_controller.rb:4:in `show'
+Started POST "/users" for ::1 at 2023-11-03 14:54:26 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Manu", "last_name"=>"Macron", "email"=>"manu.macron@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "remember_me"=>"1", "commit"=>"Valider"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1 AND "cities"."zip_code" = $2 LIMIT $3[0m  [["name", "Paris"], ["zip_code", "75011"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Exists? (5.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "manu.macron@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 357)
+  [1m[36mUser Load (23.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 1906)
+Completed 200 OK in 407ms (Views: 5.7ms | ActiveRecord: 33.6ms | Allocations: 5913)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 14:54:26 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started POST "/users" for ::1 at 2023-11-03 14:54:38 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"manu.macron@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Valider"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1 AND "cities"."zip_code" = $2 LIMIT $3[0m  [["name", "Paris"], ["zip_code", "75011"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "manu.macron@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 357)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 1906)
+Completed 200 OK in 422ms (Views: 16.2ms | ActiveRecord: 2.3ms | Allocations: 5937)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 14:54:39 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/sessions/new" for ::1 at 2023-11-03 14:54:43 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 469)
+  [1m[36mUser Load (84.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 91.7ms | Allocations: 2023)
+Completed 200 OK in 93ms (Views: 8.0ms | ActiveRecord: 84.4ms | Allocations: 2247)
+
+
+Started GET "/sessions/application.css" for ::1 at 2023-11-03 14:54:44 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/application.css"):
+  
+Started GET "/users/new" for ::1 at 2023-11-03 14:54:45 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 575)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2129)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.5ms | Allocations: 2373)
+
+
+Started GET "/users/application.css" for ::1 at 2023-11-03 14:54:45 +0100
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 404 Not Found in 22ms (ActiveRecord: 10.9ms | Allocations: 861)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=application):
+  
+app/controllers/users_controller.rb:4:in `show'
+Started GET "/home" for ::1 at 2023-11-03 14:58:01 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mGossip Load (9.5ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 218.8ms | Allocations: 18916)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 247.4ms | Allocations: 20774)
+Completed 200 OK in 267ms (Views: 220.7ms | ActiveRecord: 32.6ms | Allocations: 23560)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 14:58:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/users/new" for ::1 at 2023-11-03 14:58:11 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 1644)
+  [1m[36mUser Load (33.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 62.9ms | Allocations: 3202)
+Completed 200 OK in 77ms (Views: 38.1ms | ActiveRecord: 32.9ms | Allocations: 3660)
+
+
+Started GET "/users/application.css" for ::1 at 2023-11-03 14:58:12 +0100
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 404 Not Found in 11ms (ActiveRecord: 0.6ms | Allocations: 871)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=application):
+  
+app/controllers/users_controller.rb:4:in `show'
+Started POST "/users" for ::1 at 2023-11-03 14:58:46 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Sam", "last_name"=>"Merguez", "email"=>"sam.merguez@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "remember_me"=>"1", "commit"=>"Valider"}
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1 AND "cities"."zip_code" = $2 LIMIT $3[0m  [["name", "Paris"], ["zip_code", "75011"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Exists? (5.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam.merguez@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at", "password_digest", "remember_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Sam"], ["last_name", "Merguez"], ["description", nil], ["email", "sam.merguez@email.com"], ["age", nil], ["city_id", 44], ["created_at", "2023-11-03 13:58:46.656699"], ["updated_at", "2023-11-03 13:58:46.656699"], ["password_digest", "[FILTERED]"], ["remember_digest", nil]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (47.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+Redirected to http://[::1]:3000/home
+Completed 302 Found in 475ms (ActiveRecord: 60.3ms | Allocations: 14954)
+
+
+Started GET "/home" for ::1 at 2023-11-03 14:58:46 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (37.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 155.3ms | Allocations: 6925)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 166.0ms | Allocations: 8242)
+Completed 200 OK in 167ms (Views: 127.1ms | ActiveRecord: 39.4ms | Allocations: 8479)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 14:58:47 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users/new" for ::1 at 2023-11-03 15:04:31 +0100
+Started GET "/users/new" for ::1 at 2023-11-03 15:04:31 +0100
+Processing by UsersController#new as HTML
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1680)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 4514)
+Completed 200 OK in 81ms (Views: 32.2ms | ActiveRecord: 7.5ms | Allocations: 13533)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 551)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2229)
+Completed 200 OK in 118ms (Views: 5.8ms | ActiveRecord: 103.1ms | Allocations: 18041)
+
+
+Started GET "/users/application.css" for ::1 at 2023-11-03 15:04:31 +0100
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms | Allocations: 874)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=application):
+  
+app/controllers/users_controller.rb:4:in `show'
+Started POST "/users" for ::1 at 2023-11-03 15:05:02 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Barbie", "last_name"=>"Ken", "email"=>"barbie.ken@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "remember_me"=>"1", "commit"=>"Valider"}
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1 AND "cities"."zip_code" = $2 LIMIT $3[0m  [["name", "Paris"], ["zip_code", "75011"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "barbie.ken@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Create (13.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at", "password_digest", "remember_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Barbie"], ["last_name", "Ken"], ["description", nil], ["email", "barbie.ken@email.com"], ["age", nil], ["city_id", 44], ["created_at", "2023-11-03 14:05:02.582855"], ["updated_at", "2023-11-03 14:05:02.582855"], ["password_digest", "[FILTERED]"], ["remember_digest", nil]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "barbie.ken@email.com"], ["id", 52], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mUser Update (8.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-11-03 14:05:02.900654"], ["remember_digest", "$2a$12$w05ZsR6Hp9Fbu7i7NTMmDuQz1C2proxAql6V7pF32GYMx/lO0zdyC"], ["id", 52]]
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:12:in `remember'
+Redirected to http://[::1]:3000/home
+Completed 302 Found in 692ms (ActiveRecord: 57.9ms | Allocations: 17938)
+
+
+Started GET "/home" for ::1 at 2023-11-03 15:05:02 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mGossip Load (0.8ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 39.4ms | Allocations: 12113)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 48.0ms | Allocations: 13658)
+Completed 200 OK in 63ms (Views: 45.5ms | ActiveRecord: 5.3ms | Allocations: 15596)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 15:05:03 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started DELETE "/sessions/d7d93993fe8aa37ddb92e1fef99c6083" for ::1 at 2023-11-03 15:05:21 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"d7d93993fe8aa37ddb92e1fef99c6083"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 768)
+
+
+  
+NameError (undefined local variable or method `user' for #<SessionsController:0x00000000039af8>):
+  
+app/controllers/sessions_controller.rb:37:in `destroy'
+Started DELETE "/sessions/d7d93993fe8aa37ddb92e1fef99c6083" for ::1 at 2023-11-03 15:07:34 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"d7d93993fe8aa37ddb92e1fef99c6083"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "barbie.ken@email.com"], ["id", 52], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+  [1m[36mUser Update (40.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-11-03 14:07:34.683649"], ["remember_digest", nil], ["id", 52]]
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+Redirected to http://[::1]:3000/sessions/new
+Completed 302 Found in 90ms (ActiveRecord: 51.7ms | Allocations: 11317)
+
+
+Started GET "/sessions/new" for ::1 at 2023-11-03 15:07:34 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 941)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 2619)
+Completed 200 OK in 28ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 3646)
+
+
+Started GET "/sessions/application.css" for ::1 at 2023-11-03 15:07:34 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/application.css"):
+  
+Started POST "/sessions" for ::1 at 2023-11-03 15:08:01 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"manu.macron@email.com", "password"=>"[FILTERED]", "remember_me"=>"1", "commit"=>"Submit"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "manu.macron@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 382ms (ActiveRecord: 1.0ms | Allocations: 1266)
+
+
+  
+NoMethodError (undefined method `login' for #<SessionsController:0x0000000003f2f0>):
+  
+app/controllers/sessions_controller.rb:17:in `create'
+Started POST "/sessions" for ::1 at 2023-11-03 15:09:01 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"manu.macron@email.com", "password"=>"[FILTERED]", "remember_me"=>"1", "commit"=>"Submit"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "manu.macron@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "manu.macron@email.com"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-11-03 14:09:02.572063"], ["remember_digest", "$2a$12$vT1FAaAfWKAiAg8YsNDNTeZADtrR/hG90k2g.BgSd8ZpFr.1kaqTK"], ["id", 50]]
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:12:in `remember'
+Redirected to http://[::1]:3000/home
+Completed 302 Found in 882ms (ActiveRecord: 90.8ms | Allocations: 11005)
+
+
+Started GET "/home" for ::1 at 2023-11-03 15:09:02 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 151.9ms | Allocations: 12754)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 181.0ms | Allocations: 14791)
+Completed 200 OK in 216ms (Views: 174.5ms | ActiveRecord: 14.6ms | Allocations: 17340)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 15:09:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/home" for ::1 at 2023-11-03 15:09:36 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mGossip Load (15.6ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (67.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (29.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 266.2ms | Allocations: 7449)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 282.0ms | Allocations: 8948)
+Completed 200 OK in 284ms (Views: 163.5ms | ActiveRecord: 120.0ms | Allocations: 9184)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 15:09:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started DELETE "/sessions/d7d93993fe8aa37ddb92e1fef99c6083" for ::1 at 2023-11-03 15:09:43 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"d7d93993fe8aa37ddb92e1fef99c6083"}
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mTRANSACTION (19.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+  [1m[36mUser Exists? (22.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "manu.macron@email.com"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+  [1m[36mUser Update (4.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-11-03 14:09:43.447963"], ["remember_digest", nil], ["id", 50]]
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+Redirected to http://[::1]:3000/sessions/new
+Completed 302 Found in 54ms (ActiveRecord: 57.2ms | Allocations: 3220)
+
+
+Started GET "/sessions/new" for ::1 at 2023-11-03 15:09:43 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 925)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 2080)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 2483)
+
+
+Started GET "/sessions/application.css" for ::1 at 2023-11-03 15:09:43 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/application.css"):
+  
+Started GET "/home" for ::1 at 2023-11-03 15:09:51 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (44.5ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (77.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  Rendered home/home.html.erb within layouts/application (Duration: 149.6ms | Allocations: 4443)
+  Rendered layout layouts/application.html.erb (Duration: 152.4ms | Allocations: 5468)
+Completed 200 OK in 157ms (Views: 29.0ms | ActiveRecord: 127.3ms | Allocations: 5704)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 15:09:51 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/users/new" for ::1 at 2023-11-03 15:09:59 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1654)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2803)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3261)
+
+
+Started GET "/users/application.css" for ::1 at 2023-11-03 15:09:59 +0100
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"application"}
+  [1m[36mUser Load (23.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 404 Not Found in 27ms (ActiveRecord: 23.7ms | Allocations: 872)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=application):
+  
+app/controllers/users_controller.rb:4:in `show'
+Started POST "/users" for ::1 at 2023-11-03 15:10:39 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Bernard", "last_name"=>"Tapie", "email"=>"bernard.tapie@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "remember_me"=>"1", "commit"=>"Valider"}
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."name" = $1 AND "cities"."zip_code" = $2 LIMIT $3[0m  [["name", "Paris"], ["zip_code", "75011"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bernard.tapie@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at", "password_digest", "remember_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "Bernard"], ["last_name", "Tapie"], ["description", nil], ["email", "bernard.tapie@email.com"], ["age", nil], ["city_id", 44], ["created_at", "2023-11-03 14:10:39.802644"], ["updated_at", "2023-11-03 14:10:39.802644"], ["password_digest", "[FILTERED]"], ["remember_digest", nil]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mUser Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "bernard.tapie@email.com"], ["id", 53], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-11-03 14:10:40.112785"], ["remember_digest", "$2a$12$kOLV21wTb04DAE23eANhU.MoBRJNLCsiy7IrytG1Xn0irN7750Vy2"], ["id", 53]]
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:12:in `remember'
+Redirected to http://[::1]:3000/home
+Completed 302 Found in 688ms (ActiveRecord: 16.3ms | Allocations: 17068)
+
+
+Started GET "/home" for ::1 at 2023-11-03 15:10:40 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 65.3ms | Allocations: 7421)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 72.7ms | Allocations: 8920)
+Completed 200 OK in 76ms (Views: 68.0ms | ActiveRecord: 7.0ms | Allocations: 9158)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 15:10:40 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/home" for ::1 at 2023-11-03 15:11:07 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (112.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mGossip Load (22.8ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 197.9ms | Allocations: 7435)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 208.4ms | Allocations: 8934)
+Completed 200 OK in 210ms (Views: 62.4ms | ActiveRecord: 147.6ms | Allocations: 9170)
+
+
+Started GET "/application.css" for ::1 at 2023-11-03 15:11:08 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started DELETE "/sessions/d7d93993fe8aa37ddb92e1fef99c6083" for ::1 at 2023-11-03 15:17:49 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"d7d93993fe8aa37ddb92e1fef99c6083"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 18ms (ActiveRecord: 0.0ms | Allocations: 638)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.1.1) lib/action_controller/metal/request_forgery_protection.rb:293:in `handle_unverified_request'
+actionpack (7.1.1) lib/action_controller/metal/request_forgery_protection.rb:388:in `handle_unverified_request'
+actionpack (7.1.1) lib/action_controller/metal/request_forgery_protection.rb:377:in `verify_authenticity_token'
+activesupport (7.1.1) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.1) lib/active_support/callbacks.rb:202:in `block (2 levels) in halting'
+actionpack (7.1.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.1) lib/active_support/callbacks.rb:203:in `block in halting'
+activesupport (7.1.1) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.1) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.1) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.1) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+activesupport (7.1.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.1) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.1) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.1) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.1) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.1) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.1) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.1) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.1) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.1) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.1) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.1) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.1) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.1) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.1) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.1) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:43:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.1) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.1) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.1) lib/active_record/migration.rb:653:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+sentry-rails (5.12.0) lib/sentry/rails/rescued_exception_interceptor.rb:9:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+sentry-ruby (5.12.0) lib/sentry/rack/capture_exceptions.rb:13:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.1) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.1) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.1) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.1) lib/active_support/broadcast_logger.rb:232:in `method_missing'
+railties (7.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.1) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.1) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.1) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.1) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2023-11-03 15:19:17 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (46.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nellyguerin/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nellyguerin/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.0ms | Allocations: 374)
+Completed 200 OK in 1665ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 283052)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-11-03 15:19:31 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (0.8ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (20.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (56.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  Rendered home/home.html.erb within layouts/application (Duration: 835.5ms | Allocations: 51049)
+  Rendered layout layouts/application.html.erb (Duration: 876.4ms | Allocations: 52852)
+Completed 200 OK in 1038ms (Views: 669.2ms | ActiveRecord: 216.8ms | Allocations: 61932)
+
+
+Started GET "/application.css" for 127.0.0.1 at 2023-11-03 15:19:33 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-03 15:19:48 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 975)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 2120)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 2559)
+
+
+Started GET "/sessions/application.css" for 127.0.0.1 at 2023-11-03 15:19:48 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/application.css"):
+  
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/sessions" for 127.0.0.1 at 2023-11-03 15:20:31 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"joseph.moulin@email.com", "password"=>"[FILTERED]", "remember_me"=>"1", "commit"=>"Submit"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joseph.moulin@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 258)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 1399)
+Completed 200 OK in 323ms (Views: 7.8ms | ActiveRecord: 3.9ms | Allocations: 2565)
+
+
+Started GET "/application.css" for 127.0.0.1 at 2023-11-03 15:20:31 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started POST "/sessions" for 127.0.0.1 at 2023-11-03 15:20:47 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"joseph.moulin@email.com", "password"=>"[FILTERED]", "remember_me"=>"1", "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joseph.moulin@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "joseph.moulin@email.com"], ["id", 35], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-11-03 14:20:48.699784"], ["remember_digest", "$2a$12$mNl2qMj79FfGMJmcX8vzbO2T5SZ996YrbN4PA.87yNyHkwOayJkaq"], ["id", 35]]
+  ↳ app/models/user.rb:12:in `remember'
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:12:in `remember'
+Redirected to http://127.0.0.1:3000/home
+Completed 302 Found in 698ms (ActiveRecord: 15.6ms | Allocations: 5248)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-11-03 15:20:48 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 38.1ms | Allocations: 8202)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 9736)
+Completed 200 OK in 43ms (Views: 29.8ms | ActiveRecord: 12.6ms | Allocations: 9974)
+
+
+Started GET "/application.css" for 127.0.0.1 at 2023-11-03 15:20:48 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-03 15:21:21 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nellyguerin/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nellyguerin/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 12)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 192)
+
+
+Started GET "/home" for 127.0.0.1 at 2023-11-03 15:21:30 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mUser Load (15.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (11.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered home/home.html.erb within layouts/application (Duration: 171.9ms | Allocations: 7414)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 177.5ms | Allocations: 8915)
+Completed 200 OK in 183ms (Views: 148.9ms | ActiveRecord: 33.3ms | Allocations: 9155)
+
+
+Started GET "/application.css" for 127.0.0.1 at 2023-11-03 15:21:30 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  
+Started DELETE "/sessions/5030cb9b37136d39cd5216f04dca3fa3" for 127.0.0.1 at 2023-11-03 15:21:48 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"5030cb9b37136d39cd5216f04dca3fa3"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5:in `current_user'
+  [1m[36mTRANSACTION (52.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+  [1m[36mUser Exists? (57.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "joseph.moulin@email.com"], ["id", 35], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+  [1m[36mUser Update (8.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-11-03 14:21:48.605457"], ["remember_digest", nil], ["id", 35]]
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/helpers/sessions_helper.rb:49:in `forget'
+Redirected to http://127.0.0.1:3000/sessions/new
+Completed 302 Found in 94ms (ActiveRecord: 128.0ms | Allocations: 3208)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-03 15:21:48 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 476)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 1621)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 1847)
+
+
+Started GET "/sessions/application.css" for 127.0.0.1 at 2023-11-03 15:21:48 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/application.css"):
+  
+Started GET "/home" for 127.0.0.1 at 2023-11-03 15:22:00 +0100
+Processing by HomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (94.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" ORDER BY "gossips"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/home/home.html.erb:48
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:53
+  Rendered home/home.html.erb within layouts/application (Duration: 140.1ms | Allocations: 4472)
+  Rendered layout layouts/application.html.erb (Duration: 155.6ms | Allocations: 5499)
+Completed 200 OK in 157ms (Views: 55.6ms | ActiveRecord: 101.0ms | Allocations: 5736)
+
+
+Started GET "/application.css" for 127.0.0.1 at 2023-11-03 15:22:01 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/application.css"):
+  

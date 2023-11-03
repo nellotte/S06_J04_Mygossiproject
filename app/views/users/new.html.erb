@@ -25,6 +25,11 @@
     <%= password_field_tag 'user[password_confirmation]', nil, class: 'form-control', placeholder: 'Confirmer le mot de passe' %>
   </div>
 
+  <div class="field my-2">
+    <%= label_tag :remember_me, 'Se souvenir de moi' %>
+    <%= check_box_tag :remember_me %>
+  </div>
+
   <%= submit_tag 'Valider', class: 'btn btn-primary my-2' %>
   <small id="already_member" class="form-text text-muted my-2">
     <%= link_to 'Déjà membre', new_session_path %>

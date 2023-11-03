@@ -6,4 +6,11 @@ class User < ApplicationRecord
   has_many :comments
   has_secure_password
   validates :email, presence: true, uniqueness: true
+
+  def remember(remember_token)
+    remember_digest = BCrypt::Password.create(remember_token)
+    self.update(remember_digest: remember_digest)
+  end
+
 end
+

@@ -16,13 +16,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
       # par defaut tous les nouveaux user sont a paris. Recherche de la ville de Paris ou création si elle n'existe pas
     paris_city = City.find_or_create_by(name: "Paris", zip_code: "75011")
     @user.city = paris_city
-
+    
     if @user.save
-      redirect_to new_session_path # Redirige vers la page de connexion 
+      remember(@user) # Crée le cookie de mémorisation
+      log_in(@user) # Connecte l'utilisateur
+      redirect_to home_path # Redirige vers la page de connexion 
     else
       # Afficher les erreurs en cas d'échec
       puts "$" * 60
