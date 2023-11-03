@@ -1,6 +1,7 @@
 <html>
   <head>
-    <title>Créer un potin</title>
+    <title>Créer un gossip</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
 
   <body>
@@ -12,26 +13,24 @@
      <% end %>
      <!--  -->
 
+ <div class="container mx-3">
     <h1>Raconte nous tout !</h1>
 
-    <p>Balance ton potin via le formulaire ci-dessous</p>
+    <p>Balance ton gossip le plus croustillant via le formulaire ci-dessous</p>
 
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <div class="mb-3">
+        <%= label_tag 'title', 'Titre du Gossip', class: 'form-label' %>
+        <%= text_field_tag 'title', @gossip.title, class: 'form-control', id: 'exampleFormControlInput1' %>
+      </div>
 
+      <div class="mb-3">
+        <%= label_tag 'content', 'Donne-nous un peu plus de détails sur ce gossip ;-)', class: 'form-label' %>
+        <%= text_area_tag 'content', @gossip.content, class: 'form-control', id: 'exampleFormControlTextarea1', rows: 3 %>
+      </div>
 
-  <%= form_tag url_for(action: 'create'), method: "post" do %>
-
-      <%= label_tag 'title' %>
-      <%= text_field_tag 'title', @gossip.title %>
-      <br /> <br />
-
-      <%= label_tag 'content' %>
-      <%= text_area_tag 'content', @gossip.content %>
-      <br /> <br />
-
-   
-
-      <%= submit_tag "Create Post" %>
-
+      <%= submit_tag "Envoyer", class: 'btn btn-primary' %>
     <% end %>
-
-    <!-- ... -->
+</div>
+  </body>
+</html>

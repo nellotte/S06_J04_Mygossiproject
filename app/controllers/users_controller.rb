@@ -2,7 +2,15 @@ class UsersController < ApplicationController
   # Méthode qui récupère le potin concerné et l'envoie à la view show (show.html.erb) pour affichage
   def show
     @user = User.find(params[:id])
-    @gossips = @user.gossips if @user.gossips.present?
+    if @user #vérifie si @user est défini et n'est pas nil. Si @user est nil, cela signifie qu'aucun utilisateur correspondant à l'ID donné n'a été trouvé dans la base de données.
+      if @user.gossips.present? #vérifie si l'utilisateur a des gossips associés. 
+        @gossips = @user.gossips #Si l'utilisateur a des gossips associés, cette ligne attribue ces gossips à la variable d'instance @gossips.
+      else
+        @gossips = [] #nous initialisons @gossips comme un tableau vide pour éviter que @gossips ne soit nil. Cela garantit que vous pouvez itérer sur @gossips sans déclencher d'erreurs.
+      end
+    else
+      # Traitez le cas où l'utilisateur n'a pas été trouvé (par exemple, redirigez vers une page d'erreur)
+    end
   end
 
   # Méthode qui récupère tous les potins et les envoie à la view index (index.html.erb) pour affichage
@@ -36,6 +44,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :city, :age, :description)
   end
 end

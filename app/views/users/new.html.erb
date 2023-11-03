@@ -17,6 +17,21 @@
   </div>
 
   <div class="form-group my-2">
+    <%= label_tag 'user[city]', 'Où habitez-vous ?' %>
+    <%= collection_select(:user, :city_id, City.all, :id, :name, { prompt: 'Sélectionnez une ville' }, class: 'form-control') %>
+  </div>
+
+  <div class="form-group my-2">
+  <%= label_tag 'user[age]', 'Âge' %>
+  <%= number_field_tag 'user[age]', nil, class: 'form-control', placeholder: 'Âge' %>
+  </div>
+
+  <div class="form-group my-2">
+    <%= label_tag 'user[description]', 'Description' %>
+    <%= text_area_tag 'user[description]', nil, class: 'form-control', placeholder: 'Description' %>
+  </div>
+
+  <div class="form-group my-2">
     <%= label_tag 'user[password]', 'Définissez votre mot de passe' %>
     <%= password_field_tag 'user[password]', nil, class: 'form-control', placeholder: 'Mot de passe' %>
   </div>
